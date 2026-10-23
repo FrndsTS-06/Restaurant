@@ -14,6 +14,7 @@ export const FoodModelControls = ({
   onResetView,
   onZoomIn,
   onZoomOut,
+  zoomLevel = 100,
   className = ''
 }) => {
   return (
@@ -44,66 +45,71 @@ export const FoodModelControls = ({
           </button>
         )}
 
-        {viewMode === '3d' && (
-          <>
-            {/* Auto-Rotation Toggle */}
-            {onToggleAutoRotate && (
-              <button
-                type="button"
-                id="food-viewer-autorotate-btn"
-                onClick={onToggleAutoRotate}
-                aria-label={isAutoRotating ? 'Pause 3D rotation' : 'Start 3D auto-rotation'}
-                title={isAutoRotating ? 'Pause Auto-Spin' : 'Start Auto-Spin'}
-                className={`p-1.5 rounded-full backdrop-blur-md border text-xs shadow-md transition-colors cursor-pointer ${
-                  isAutoRotating
-                    ? 'bg-amber-400/25 border-amber-400/50 text-amber-300'
-                    : 'bg-black/80 border-white/20 text-slate-300 hover:text-white'
-                }`}
-              >
-                {isAutoRotating ? <Pause size={14} /> : <Play size={14} />}
-              </button>
-            )}
+        {viewMode === '3d' && onToggleAutoRotate && (
+          /* Auto-Rotation Toggle */
+          <button
+            type="button"
+            id="food-viewer-autorotate-btn"
+            onClick={onToggleAutoRotate}
+            aria-label={isAutoRotating ? 'Pause 3D rotation' : 'Start 3D auto-rotation'}
+            title={isAutoRotating ? 'Pause Auto-Spin' : 'Start Auto-Spin'}
+            className={`p-1.5 rounded-full backdrop-blur-md border text-xs shadow-md transition-colors cursor-pointer ${
+              isAutoRotating
+                ? 'bg-amber-400/25 border-amber-400/50 text-amber-300'
+                : 'bg-black/80 border-white/20 text-slate-300 hover:text-white'
+            }`}
+          >
+            {isAutoRotating ? <Pause size={14} /> : <Play size={14} />}
+          </button>
+        )}
 
-            {/* Reset Camera View */}
-            {onResetView && (
-              <button
-                type="button"
-                id="food-viewer-reset-btn"
-                onClick={onResetView}
-                aria-label="Reset 3D camera view"
-                title="Reset Camera View (R)"
-                className="p-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/20 hover:border-amber-400/60 text-slate-300 hover:text-white text-xs shadow-md transition-colors cursor-pointer"
-              >
-                <RotateCcw size={14} />
-              </button>
-            )}
+        {/* Reset View Button */}
+        {onResetView && (
+          <button
+            type="button"
+            id="food-viewer-reset-btn"
+            onClick={onResetView}
+            aria-label={viewMode === '3d' ? "Reset 3D camera view" : "Reset photo view"}
+            title="Reset View (R)"
+            className="p-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/20 hover:border-amber-400/60 text-slate-300 hover:text-white text-xs shadow-md transition-colors cursor-pointer"
+          >
+            <RotateCcw size={14} />
+          </button>
+        )}
 
-            {/* Controlled Zoom In & Out (Accessibility & Touch Friendly) */}
-            {onZoomIn && (
-              <button
-                type="button"
-                id="food-viewer-zoomin-btn"
-                onClick={onZoomIn}
-                aria-label="Zoom in on 3D food model"
-                title="Zoom In (+)"
-                className="p-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/20 hover:border-amber-400/60 text-slate-300 hover:text-white text-xs shadow-md transition-colors cursor-pointer"
-              >
-                <ZoomIn size={14} />
-              </button>
-            )}
-            {onZoomOut && (
-              <button
-                type="button"
-                id="food-viewer-zoomout-btn"
-                onClick={onZoomOut}
-                aria-label="Zoom out of 3D food model"
-                title="Zoom Out (-)"
-                className="p-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/20 hover:border-amber-400/60 text-slate-300 hover:text-white text-xs shadow-md transition-colors cursor-pointer"
-              >
-                <ZoomOut size={14} />
-              </button>
-            )}
-          </>
+        {/* Controlled Zoom In & Out */}
+        {onZoomOut && (
+          <button
+            type="button"
+            id="food-viewer-zoomout-btn"
+            onClick={onZoomOut}
+            aria-label="Zoom out of 3D food model"
+            title="Zoom Out (-)"
+            className="p-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/20 hover:border-amber-400/60 text-slate-300 hover:text-white text-xs shadow-md transition-colors cursor-pointer"
+          >
+            <ZoomOut size={14} />
+          </button>
+        )}
+
+        {/* Zoom Level Indicator */}
+        <span
+          id="food-viewer-zoom-level-badge"
+          className="px-2 py-1 rounded-full bg-black/80 border border-white/10 text-[10px] font-mono font-bold text-amber-300 min-w-[42px] text-center shadow-md select-none"
+        >
+          {zoomLevel}%
+        </span>
+
+        {onZoomIn && (
+          <button
+            type="button"
+            id="food-viewer-zoomin-btn"
+            onClick={onZoomIn}
+            aria-label="Zoom in on 3D food model"
+            title="Zoom In (+)"
+            className="p-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/20 hover:border-amber-400/60 text-slate-300 hover:text-white text-xs shadow-md transition-colors cursor-pointer"
+          >
+            <ZoomIn size={14} />
+          </button>
         )}
       </div>
 

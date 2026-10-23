@@ -1,13 +1,39 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MapPin, Phone, Mail, Clock, ShieldCheck, Car, Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
+import { MapPin, Phone, Mail, Clock, ShieldCheck, Car, Send, CheckCircle2, AlertCircle, UtensilsCrossed, ArrowRight } from 'lucide-react';
 import { Button } from '../../components/common/Button';
 import { Badge } from '../../components/common/Badge';
 import { useGetSettingsQuery, useSubmitContactFormMutation } from '../../store/api/apiSlice';
+import { OrderTracker } from '../../components/customer/OrderTracker';
 
 export const ContactPage = () => {
   const { data: settingsRes } = useGetSettingsQuery();
   const settings = settingsRes?.data;
   const [submitContact, { isLoading }] = useSubmitContactFormMutation();
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const initialTab = (searchParams.get('tab') === 'track' || searchParams.get('orderNumber') || searchParams.get('email')) ? 'track' : 'concierge';
+  const [activeTab, setActiveTab] = useState(initialTab);
+
+  useEffect(() => {
+    if (searchParams.get('tab') === 'track' || searchParams.get('orderNumber') || searchParams.get('email')) {
+      setActiveTab('track');
+    }
+  }, [searchParams]);
+
+  const switchTab = (tab) => {
+    setActiveTab(tab);
+    if (tab === 'track') {
+      const orderNumber = searchParams.get('orderNumber');
+      const email = searchParams.get('email');
+      const newParams = { tab: 'track' };
+      if (orderNumber) newParams.orderNumber = orderNumber;
+      if (email) newParams.email = email;
+      setSearchParams(newParams);
+    } else {
+      setSearchParams({});
+    }
+  };
 
   const [formData, setFormData] = useState({
     name: '',
@@ -122,23 +148,83 @@ export const ContactPage = () => {
 
   return (
     <div className="contact-page animate-fade-in text-slate-200">
-      {/* Header */}
-      <section className="pt-24 pb-20 sm:pt-28 sm:pb-24 border-b border-white/10 bg-[#13151b]/60 text-center">
+      {/* Header with Navigation Switcher */}
+      <section className="pt-24 pb-14 sm:pt-28 sm:pb-16 border-b border-white/10 bg-[#13151b]/60 text-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-          <Badge variant="gold">Guest Concierge Desk</Badge>
+          <Badge variant="gold">
+            {activeTab === 'track' ? 'Kitchen Dispatch & Fulfillment' : 'Guest Concierge Desk'}
+          </Badge>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mt-4 mb-4">
-            Connect With <span className="gradient-text-gold">{restaurantName}</span>
+            {activeTab === 'track' ? (
+              <>Live Order <span className="gradient-text-gold">Tracking</span></>
+            ) : (
+              <>Connect With <span className="gradient-text-gold">{restaurantName}</span></>
+            )}
           </h1>
           <p className="text-slate-300 text-base leading-relaxed">
-            Our concierge team is at your disposal for bespoke dining arrangements, sommelier requests, and private salon reservations.
+            {activeTab === 'track'
+              ? 'Observe the live culinary journey of your order from kitchen preparation to white-glove courier dispatch.'
+              : 'Our concierge team is at your disposal for bespoke dining arrangements, sommelier requests, and private salon reservations.'}
           </p>
+
+          {/* Dual Tab Switcher */}
+          <div className="flex justify-center mt-8">
+            <div className="inline-flex p-1.5 rounded-2xl bg-[#0b0c10] border border-white/10 shadow-inner">
+              <button
+                id="contact-concierge-tab-btn"
+                type="button"
+                onClick={() => switchTab('concierge')}
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                  activeTab === 'concierge'
+                    ? 'bg-amber-400 text-black shadow-lg shadow-amber-400/20'
+                    : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                <Mail size={16} /> Guest Concierge & Inquiries
+              </button>
+              <button
+                id="contact-tracking-tab-btn"
+                type="button"
+                onClick={() => switchTab('track')}
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                  activeTab === 'track'
+                    ? 'bg-amber-400 text-black shadow-lg shadow-amber-400/20'
+                    : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                <UtensilsCrossed size={16} /> Live Order Tracking
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Main Contact Grid */}
-      <section className="py-24 sm:py-28">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
+      {/* Conditional Content: Order Tracking vs Concierge Inquiries */}
+      {activeTab === 'track' ? (
+        <section className="py-16 sm:py-24">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <OrderTracker />
+          </div>
+        </section>
+      ) : (
+        /* Main Contact Grid */
+        <section className="py-16 sm:py-24">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            {/* Quick banner linking to order tracking */}
+            <div className="mb-10 p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm">
+              <div className="flex items-center gap-2 text-amber-300">
+                <UtensilsCrossed size={16} className="shrink-0" />
+                <span>Looking for the live kitchen preparation status of an existing order?</span>
+              </div>
+              <button
+                type="button"
+                onClick={() => switchTab('track')}
+                className="text-amber-400 hover:text-amber-300 font-semibold flex items-center gap-1 cursor-pointer shrink-0"
+              >
+                Switch to Order Tracker <ArrowRight size={14} />
+              </button>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
             {/* Contact Details & Info Cards */}
             <div>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-6">
@@ -419,6 +505,8 @@ export const ContactPage = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    )}
+  </div>
+);
 };
+

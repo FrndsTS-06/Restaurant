@@ -25,7 +25,12 @@ export const Navbar = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [mobileMenuOpen]);
 
-  const isActive = (path) => location.pathname === path;
+  const isActive = (path) => {
+    if (path.includes('?')) {
+      return (location.pathname + location.search) === path;
+    }
+    return location.pathname === path && !location.search.includes('tab=track');
+  };
 
   const navLinks = [
     { label: 'Home', path: '/' },
@@ -33,7 +38,7 @@ export const Navbar = () => {
     { label: 'Reservations', path: '/reservation' },
     { label: 'About', path: '/about' },
     { label: 'Contact', path: '/contact' },
-    { label: 'Track Order', path: '/orders/track' }
+    { label: 'Track Order', path: '/contact?tab=track' }
   ];
 
   return (

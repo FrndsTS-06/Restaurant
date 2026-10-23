@@ -213,7 +213,8 @@ async function runPhase8CompleteWebsiteTesting() {
         allPassed = false;
       }
       // Toggle back to 3D
-      await fallbackToggleBtn.click();
+      const restore3dBtn = await page.$('#hero-toggle-2d-mode-btn');
+      if (restore3dBtn) await restore3dBtn.click();
       await new Promise(r => setTimeout(r, 600));
     }
     testResults.threeDTesting.staticFallbacks = { verified: true };
@@ -705,7 +706,7 @@ async function runPhase8CompleteWebsiteTesting() {
     // --- 3.9 3D Model Upload Endpoint Validation ---
     console.log('\n--- 3.9 3D Model Upload Endpoint Validation ---');
     const uploadCheck = await page.evaluate(async (srvUrl) => {
-      const token = localStorage.getItem('token') || sessionStorage.getItem('token');
+      const token = localStorage.getItem('savoria_auth_token') || localStorage.getItem('token') || sessionStorage.getItem('token');
       // Test file upload validation with text content
       const formData = new FormData();
       const fakeBlob = new Blob(['Not a glTF binary'], { type: 'application/octet-stream' });

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { formatPrice } from '../../utils/formatters';
 import { Button } from '../common/Button';
-import { Utensils, Info, Sparkles, Box, Check } from 'lucide-react';
+import { Utensils, Info, Sparkles, Box, Check, ZoomIn } from 'lucide-react';
 
 const DEFAULT_FOOD_IMAGE = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80';
 
@@ -12,13 +12,15 @@ const DEFAULT_FOOD_IMAGE = 'https://images.unsplash.com/photo-1546069901-ba9599a
  * - "View in 3D" action trigger ONLY when a valid 3D model is available
  * - Correct food name, category, and INR price
  * - Preserved "Add to Order" cart integration
+ * - Interactive image zoom trigger for high-res culinary photography
  * - Graceful fallback for broken or missing images
  */
 export const Food3DCard = ({
   dish,
   onSelectDish,
   onAddDish,
-  onView3D
+  onView3D,
+  onZoomImage
 }) => {
   const [imageError, setImageError] = useState(false);
 
@@ -126,6 +128,37 @@ export const Food3DCard = ({
         }}>
           <span className="badge badge-gold">⭐ {dish.rating || 4.9}</span>
         </div>
+
+        {/* Bottom Right Quick Image Zoom Button */}
+        <button
+          type="button"
+          id={`zoom-dish-btn-${dish._id}`}
+          onClick={(e) => {
+            e.stopPropagation();
+            onZoomImage ? onZoomImage(dish) : onSelectDish?.(dish);
+          }}
+          aria-label={`Zoom high-resolution photograph of ${dish.name}`}
+          title="Zoom Photograph (+)"
+          style={{
+            position: 'absolute',
+            bottom: '0.75rem',
+            right: '0.75rem',
+            zIndex: 2,
+            padding: '0.45rem',
+            borderRadius: '9999px',
+            backgroundColor: 'rgba(11, 12, 16, 0.85)',
+            backdropFilter: 'blur(8px)',
+            border: '1px solid rgba(255, 255, 255, 0.2)',
+            color: '#fcd34d',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.4)'
+          }}
+        >
+          <ZoomIn size={14} />
+        </button>
       </div>
 
       {/* Card Content & Action Bar */}

@@ -87,6 +87,7 @@ export const Food3DViewer = ({
   const [isAutoRotating, setIsAutoRotating] = useState(!prefersReducedMotion);
   const [isInteracting, setIsInteracting] = useState(false);
   const [hasWebGL, setHasWebGL] = useState(true);
+  const [zoomLevel, setZoomLevel] = useState(100);
 
   const controlsRef = useRef();
   const cameraRef = useRef();
@@ -139,6 +140,7 @@ export const Food3DViewer = ({
       cameraRef.current.lookAt(0, 0, 0);
     }
     setIsAutoRotating(true);
+    setZoomLevel(100);
   }, []);
 
   // Controlled Zoom In
@@ -149,6 +151,7 @@ export const Food3DViewer = ({
       cam.getWorldDirection(dir);
       cam.position.addScaledVector(dir, 0.4);
       controlsRef.current.update();
+      setZoomLevel(prev => Math.min(prev + 25, 250));
     }
   }, []);
 
@@ -160,6 +163,7 @@ export const Food3DViewer = ({
       cam.getWorldDirection(dir);
       cam.position.addScaledVector(dir, -0.4);
       controlsRef.current.update();
+      setZoomLevel(prev => Math.max(prev - 25, 50));
     }
   }, []);
 
@@ -322,6 +326,7 @@ export const Food3DViewer = ({
         onResetView={handleResetView}
         onZoomIn={handleZoomIn}
         onZoomOut={handleZoomOut}
+        zoomLevel={zoomLevel}
       />
     </div>
   );

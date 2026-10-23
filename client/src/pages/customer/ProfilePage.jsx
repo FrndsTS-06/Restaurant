@@ -335,7 +335,7 @@ export const ProfilePage = () => {
                 <h2 className="text-xl font-serif font-bold text-amber-400">Order History</h2>
                 <p className="text-slate-400 text-sm">View your past dining orders and track live statuses.</p>
               </div>
-              <Link to="/orders/track">
+              <Link to="/contact?tab=track">
                 <Button variant="ghost" className="border border-slate-800 text-xs text-amber-400">
                   Track By Number
                 </Button>
@@ -389,7 +389,7 @@ export const ProfilePage = () => {
                     </div>
 
                     <div className="flex justify-end pt-2 border-t border-slate-800/60">
-                      <Link to={`/orders/track?orderNumber=${ord.orderNumber}`}>
+                      <Link to={`/contact?tab=track&orderNumber=${ord.orderNumber}`}>
                         <button className="text-xs font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1 cursor-pointer">
                           Track Live Status <ArrowRight size={13} />
                         </button>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HeroBanner } from '../../components/customer/HeroBanner';
+import { Home3DBackground } from '../../components/3d/Home3DBackground';
 import { getMenuItems } from '../../services/menuService';
 import { formatPrice } from '../../utils/formatters';
 import { Button } from '../../components/common/Button';
@@ -159,9 +160,12 @@ export const HomePage = () => {
   ];
 
   return (
-    <div className="homepage animate-fade-in text-slate-200">
+    <div className="homepage animate-fade-in text-slate-200 relative min-h-screen">
+      {/* Reusable Full Homepage 3D Animated Background Layer */}
+      <Home3DBackground />
+
       {/* Live System Architecture Status Bar */}
-      <div className="bg-[#13151b] border-b border-white/10 px-4 py-3 text-xs text-slate-300">
+      <div className="bg-[#13151b]/85 backdrop-blur-md border-b border-white/10 px-4 py-3 text-xs text-slate-300 relative z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <span
@@ -191,7 +195,7 @@ export const HomePage = () => {
 
       {/* Promotional Announcement Banner */}
       {settings?.homepageBanner?.enabled && (
-        <div id="homepage-promo-banner" className="bg-gradient-to-r from-amber-950/90 via-[#1f1911] to-slate-950 border-b border-amber-500/30 px-4 py-3 sm:py-3.5 text-xs sm:text-sm text-amber-200">
+        <div id="homepage-promo-banner" className="bg-gradient-to-r from-amber-950/90 via-[#1f1911] to-slate-950 border-b border-amber-500/30 px-4 py-3 sm:py-3.5 text-xs sm:text-sm text-amber-200 relative z-10 backdrop-blur-md">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-2.5">
               <span className="px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-950 text-xs font-bold uppercase tracking-wider shadow-sm flex items-center gap-1">
@@ -218,7 +222,7 @@ export const HomePage = () => {
       <HeroBanner />
 
       {/* 2. POPULAR MENU CATEGORIES */}
-      <section className="py-20 bg-[#0d0e13]">
+      <section className="py-20 bg-[#0d0e13]/80 backdrop-blur-xs relative z-10">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
@@ -265,7 +269,7 @@ export const HomePage = () => {
       </section>
 
       {/* 3. FEATURED DISHES SECTION */}
-      <section className="py-24 relative bg-[#0b0c10]">
+      <section className="py-24 relative bg-[#0b0c10]/75 backdrop-blur-xs z-10">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <Badge variant="gold" icon={<Sparkles size={14} />}>
@@ -345,7 +349,7 @@ export const HomePage = () => {
       </section>
 
       {/* 4. RESTAURANT STORY NARRATIVE */}
-      <section className="py-24 bg-[#13151b] border-y border-white/10">
+      <section className="py-24 bg-[#13151b]/80 backdrop-blur-xs border-y border-white/10 relative z-10">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -402,7 +406,7 @@ export const HomePage = () => {
       </section>
 
       {/* 5. WHY CHOOSE US (THE SAVORIA DISTINCTION) */}
-      <section className="py-24 bg-[#0e1017]">
+      <section className="py-24 bg-[#0e1017]/80 backdrop-blur-xs relative z-10">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center max-w-xl mx-auto mb-16">
             <span className="text-amber-400 text-xs uppercase font-bold tracking-widest">
@@ -437,7 +441,7 @@ export const HomePage = () => {
       </section>
 
       {/* 6. GASTRONOMIC & ATMOSPHERE GALLERY */}
-      <section className="py-24 bg-[#0b0c10]">
+      <section className="py-24 bg-[#0b0c10]/75 backdrop-blur-xs relative z-10">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
@@ -477,7 +481,7 @@ export const HomePage = () => {
       </section>
 
       {/* 7. ACCLAIM & TESTIMONIALS SECTION */}
-      <section className="py-24 bg-[#13151b] border-t border-white/10">
+      <section className="py-24 bg-[#13151b]/80 backdrop-blur-xs border-t border-white/10 relative z-10">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center max-w-xl mx-auto mb-16">
             <span className="text-amber-400 text-xs uppercase font-bold tracking-widest">
@@ -514,7 +518,7 @@ export const HomePage = () => {
       </section>
 
       {/* 8. GRAND CALL TO ACTION BANNER */}
-      <section className="py-20 bg-[#0b0c10]">
+      <section className="py-20 bg-[#0b0c10]/75 backdrop-blur-xs relative z-10">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-[#1a1e28] to-[#12141a] border border-amber-400/30 p-10 sm:p-16 text-center shadow-2xl">
             <div className="max-w-2xl mx-auto relative z-10">

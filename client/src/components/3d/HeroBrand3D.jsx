@@ -62,41 +62,65 @@ const BrandCameraRig = ({ isMobile }) => {
   return null;
 };
 
-// Unified 3D Brand Stage (Combines Emblem + Typography with Parallax & Hover Interaction)
+// Unified 3D Brand Stage (Combines Emblem + Typography with Animated Entrance, Harmonic Float & Hover Dynamics)
 const UnifiedBrandStage = ({ mousePos, isReducedMotion, isMobile }) => {
   const brandGroupRef = useRef();
   const [hovered, setHovered] = useState(false);
+  const [clicked, setClicked] = useState(false);
+  const mountTimeRef = useRef(Date.now());
 
   useFrame((state, delta) => {
     if (!brandGroupRef.current) return;
 
-    // 1. Subtle idle breathing float
     if (!isReducedMotion) {
       const elapsed = state.clock.getElapsedTime();
-      brandGroupRef.current.position.y = Math.sin(elapsed * 1.5) * 0.03;
+      const timeSinceMount = (Date.now() - mountTimeRef.current) / 1000;
+      // Smooth entrance reveal interpolation (0 -> 1 over 1.2s with easeOutCubic)
+      const entranceT = Math.min(timeSinceMount / 1.2, 1);
+      const entranceEase = 1 - Math.pow(1 - entranceT, 3);
 
-      // 2. Parallax tilt tracking mouse XY
-      const targetRotY = (mousePos.x * 0.22) + (hovered ? 0.06 : 0);
-      const targetRotX = -(mousePos.y * 0.16) + 0.03;
-      brandGroupRef.current.rotation.y = THREE.MathUtils.lerp(brandGroupRef.current.rotation.y, targetRotY, 0.08);
-      brandGroupRef.current.rotation.x = THREE.MathUtils.lerp(brandGroupRef.current.rotation.x, targetRotX, 0.08);
+      // 1. Harmonic multi-frequency 3D floating animation
+      const floatY = Math.sin(elapsed * 1.6) * 0.038 + Math.cos(elapsed * 0.8) * 0.012;
+      const floatZ = Math.sin(elapsed * 1.2) * 0.02;
+      brandGroupRef.current.position.y = (floatY + (hovered ? 0.04 : 0)) * entranceEase;
+      brandGroupRef.current.position.z = ((hovered ? 0.08 : 0) + floatZ) * entranceEase;
+
+      // 2. Responsive scale with entrance emergence + hover expansion + click spring
+      const baseScale = isMobile ? 0.72 : 0.88;
+      const hoverMult = hovered ? 1.045 : (clicked ? 0.96 : 1.0);
+      const targetScale = baseScale * hoverMult * entranceEase;
+      brandGroupRef.current.scale.setScalar(
+        THREE.MathUtils.lerp(brandGroupRef.current.scale.x, targetScale, 0.1)
+      );
+
+      // 3. Parallax tilt tracking mouse XY with smooth magnetic pull on hover
+      const targetRotY = (mousePos.x * 0.24) + (hovered ? 0.08 : 0);
+      const targetRotX = -(mousePos.y * 0.18) + (hovered ? 0.05 : 0.02);
+      const targetRotZ = (mousePos.x * 0.05) * (hovered ? 1.5 : 0.8);
+
+      brandGroupRef.current.rotation.y = THREE.MathUtils.lerp(brandGroupRef.current.rotation.y, targetRotY, 0.09);
+      brandGroupRef.current.rotation.x = THREE.MathUtils.lerp(brandGroupRef.current.rotation.x, targetRotX, 0.09);
+      brandGroupRef.current.rotation.z = THREE.MathUtils.lerp(brandGroupRef.current.rotation.z, targetRotZ, 0.09);
     } else {
       brandGroupRef.current.rotation.set(0, 0, 0);
       brandGroupRef.current.position.set(0, 0, 0);
+      const baseScale = isMobile ? 0.72 : 0.88;
+      brandGroupRef.current.scale.setScalar(baseScale);
     }
   });
 
   // Responsive layout: on small screens, arrange emblem and text with adjusted spacing
   const emblemX = isMobile ? -1.45 : -1.75;
   const typoX = isMobile ? 0.85 : 0.95;
-  const overallScale = isMobile ? 0.72 : 0.88;
 
   return (
     <group
       ref={brandGroupRef}
-      scale={[overallScale, overallScale, overallScale]}
+      scale={[0.1, 0.1, 0.1]}
       onPointerOver={() => setHovered(true)}
-      onPointerOut={() => setHovered(false)}
+      onPointerOut={() => { setHovered(false); setClicked(false); }}
+      onPointerDown={() => setClicked(true)}
+      onPointerUp={() => setClicked(false)}
       cursor="pointer"
     >
       {/* 3D Crossed Utensils Emblem */}
@@ -297,6 +321,13 @@ export const HeroBrand3D = () => {
               position={[0, -1, 3]}
               intensity={1.6}
               color="#fed7aa"
+            />
+            {/* Dedicated Emblem Specular Accent Light */}
+            <pointLight
+              position={[-1.75, 0.4, 2.6]}
+              intensity={2.6}
+              color="#ffd700"
+              distance={4.2}
             />
 
             {/* Unified 3D Brand Model */}

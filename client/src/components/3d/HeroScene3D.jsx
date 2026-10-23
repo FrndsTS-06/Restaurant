@@ -122,7 +122,7 @@ const checkIsLowPerformanceDevice = () => {
   return false;
 };
 
-export const HeroScene3D = () => {
+export const HeroScene3D = ({ fullBackground = false }) => {
   const containerRef = useRef(null);
   const [hasWebGL, setHasWebGL] = useState(true);
   const [force2D, setForce2D] = useState(false);
@@ -213,13 +213,14 @@ export const HeroScene3D = () => {
   // Graceful degradation for unsupported devices or user 2D override
   if (!hasWebGL || force2D) {
     return (
-      <div className="relative">
+      <div className={fullBackground ? "absolute inset-0 w-full h-full overflow-hidden" : "relative"}>
         <HeroFallback2D />
         {hasWebGL && (
           <button
             type="button"
+            id="hero-toggle-2d-mode-btn"
             onClick={() => setForce2D(false)}
-            className="absolute top-4 right-4 z-20 px-3 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-amber-400/40 text-amber-300 text-xs font-semibold flex items-center gap-1.5 shadow-lg hover:bg-black transition-colors"
+            className="absolute top-4 right-4 z-20 px-3.5 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-amber-400/50 text-amber-300 text-xs font-semibold flex items-center gap-1.5 shadow-lg hover:bg-black transition-colors cursor-pointer"
           >
             <Zap size={13} className="text-amber-400" />
             <span>Enable 3D Experience</span>
@@ -241,13 +242,17 @@ export const HeroScene3D = () => {
         id="threejs-hero-canvas-container"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="relative w-full h-[340px] xs:h-[380px] sm:h-[460px] lg:h-[540px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-gradient-to-b from-[#13151b] via-[#0e1017] to-[#0b0c10] select-none group"
+        className={
+          fullBackground
+            ? "absolute inset-0 w-full h-full overflow-hidden select-none z-0"
+            : "relative w-full h-[340px] xs:h-[380px] sm:h-[460px] lg:h-[540px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-gradient-to-b from-[#13151b] via-[#0e1017] to-[#0b0c10] select-none group"
+        }
       >
         <Suspense fallback={<SceneLoader />}>
           <Canvas
             id="hero-3d-canvas"
             shadows
-            camera={{ position: [0, 1.6, 4.4], fov: 42 }}
+            camera={{ position: [0, 1.6, fullBackground ? 4.6 : 4.4], fov: fullBackground ? 46 : 42 }}
             frameloop={(isVisible && !isModalActive) ? 'always' : 'never'}
             dpr={targetDpr}
             gl={{
@@ -356,7 +361,7 @@ export const HeroScene3D = () => {
         </div>
 
         {/* Bottom Interactive Badge & Architectural Disclaimer */}
-        <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 p-3 sm:p-3.5 rounded-2xl bg-[#0b0c10]/85 backdrop-blur-md border border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-1 pointer-events-none">
+        <div className={fullBackground ? "absolute bottom-3 sm:bottom-4 right-3 sm:right-6 p-2.5 sm:p-3 rounded-2xl bg-[#0b0c10]/85 backdrop-blur-md border border-white/10 flex items-center gap-3 pointer-events-none max-w-sm hidden md:flex" : "absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 p-3 sm:p-3.5 rounded-2xl bg-[#0b0c10]/85 backdrop-blur-md border border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-1 pointer-events-none"}>
           <div>
             <div className="text-[10px] uppercase font-bold tracking-widest text-amber-400 flex items-center gap-1">
               <SparklesIcon size={10} />

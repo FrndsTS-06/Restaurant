@@ -1,4 +1,5 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
+import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
 /**
@@ -9,6 +10,15 @@ import * as THREE from 'three';
  * - Precision-extruded Gourmet Fork (4 tapered tines, curved neck, handle)
  */
 export const LogoCrossedUtensils3D = ({ isHovered = false }) => {
+  const emblemGroupRef = useRef();
+
+  useFrame(() => {
+    if (!emblemGroupRef.current) return;
+    const targetScale = isHovered ? 1.05 : 1.0;
+    emblemGroupRef.current.scale.x = THREE.MathUtils.lerp(emblemGroupRef.current.scale.x, targetScale, 0.1);
+    emblemGroupRef.current.scale.y = THREE.MathUtils.lerp(emblemGroupRef.current.scale.y, targetScale, 0.1);
+    emblemGroupRef.current.scale.z = THREE.MathUtils.lerp(emblemGroupRef.current.scale.z, targetScale, 0.1);
+  });
   // 1. Generate squircle (rounded rectangle) base shape
   const squircleShape = useMemo(() => {
     const shape = new THREE.Shape();
@@ -57,7 +67,14 @@ export const LogoCrossedUtensils3D = ({ isHovered = false }) => {
   }, []);
 
   return (
-    <group position={[0, 0, 0]}>
+    <group ref={emblemGroupRef} position={[0, 0, 0]}>
+      {/* Dynamic Specular Front Highlight on Knife & Fork */}
+      <pointLight
+        position={[0, 0, 0.45]}
+        intensity={isHovered ? 2.8 : 1.6}
+        color="#fff4d0"
+        distance={2.5}
+      />
       {/* ======================================================== */}
       {/* 1. OBSIDIAN & GOLD BEVELED PLAQUE BASE                  */}
       {/* ======================================================== */}

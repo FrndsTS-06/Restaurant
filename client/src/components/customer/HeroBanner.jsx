@@ -7,29 +7,23 @@ import { HeroFallback2D } from '../3d/HeroFallback2D';
 import { BrandStaticFallback } from '../3d/BrandStaticFallback';
 
 // Lazy-load the 3D scenes to keep initial bundle size lean and fast
-const HeroScene3D = React.lazy(() =>
-  import('../3d/HeroScene3D').then((module) => ({ default: module.HeroScene3D }))
-);
 const HeroBrand3D = React.lazy(() =>
   import('../3d/HeroBrand3D').then((module) => ({ default: module.HeroBrand3D }))
 );
 
 export const HeroBanner = () => {
   return (
-    <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden border-b border-white/10 bg-[#0b0c10]">
-      {/* Ambient background volumetric glow */}
+    <section className="relative min-h-[620px] sm:min-h-[680px] lg:min-h-[760px] overflow-hidden border-b border-white/10 flex items-center bg-transparent">
+      {/* Subtle atmospheric ambient glow to enhance brand typography and card */}
       <div
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] pointer-events-none"
-        style={{
-          background: 'radial-gradient(circle, rgba(230, 175, 93, 0.12) 0%, transparent 70%)',
-          filter: 'blur(70px)'
-        }}
+        className="absolute inset-0 bg-gradient-to-r from-[#0b0c10]/80 via-[#0b0c10]/40 to-transparent pointer-events-none z-0"
+        aria-hidden="true"
       />
 
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 py-14 sm:py-18 lg:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* Left Column: Headlines & Actions (High Contrast & Non-overlapping) */}
-          <div className="lg:col-span-6 flex flex-col gap-5 sm:gap-6 text-left">
+          <div className="lg:col-span-7 flex flex-col gap-5 sm:gap-6 text-left">
             {/* Interactive 3D Restaurant Name and Logo */}
             <div className="w-full">
               <Suspense fallback={<BrandStaticFallback />}>
@@ -86,14 +80,33 @@ export const HeroBanner = () => {
             </div>
           </div>
 
-          {/* Right Column: Interactive 3D Canvas Viewport */}
-          <div className="lg:col-span-6 w-full relative">
-            <Suspense fallback={<HeroFallback2D />}>
-              <HeroScene3D />
-            </Suspense>
-            <p className="text-[11px] text-slate-400/90 italic text-center mt-2.5">
-              * Artistic 3D architectural interior visualization inspired by Savoria&apos;s Parisian design heritage.
-            </p>
+          {/* Right Column: Architectural Atmosphere Showcase Card */}
+          <div className="lg:col-span-5 w-full flex justify-end">
+            <div className="w-full max-w-md p-6 sm:p-7 rounded-3xl bg-[#13151b]/70 backdrop-blur-xl border border-amber-400/25 shadow-2xl space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-[11px] uppercase tracking-widest text-amber-400 font-bold flex items-center gap-1.5">
+                  <Sparkles size={12} /> Live 3D Atmospheric Salon
+                </span>
+                <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[10px] font-bold">
+                  WebGL 60 FPS
+                </span>
+              </div>
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-white leading-snug">
+                The Architectural Dining Sanctuary
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Rendered live in real-time 3D geometry. Observe Parisian neoclassical colonnades, candlelit marble banquettes, and ambient crystal chandelier refractions.
+              </p>
+              <div className="pt-2 flex flex-wrap items-center gap-3 text-xs">
+                <Link
+                  to="/reservation"
+                  className="inline-flex items-center gap-1.5 text-amber-300 hover:text-amber-200 font-semibold underline underline-offset-4"
+                >
+                  <span>Reserve an Evening Salon</span>
+                  <ArrowRight size={13} />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

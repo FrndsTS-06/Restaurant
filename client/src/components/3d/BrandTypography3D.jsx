@@ -13,12 +13,23 @@ import * as THREE from 'three';
 export const BrandTypography3D = ({ isReducedMotion = false }) => {
   const glintLightRef = useRef();
 
-  // Subtle specular glint sweeping slowly across the 3D name
+  const secondaryLightRef = useRef();
+
+  // Dynamic sweeping gold specular glint across the 3D brand lettering
   useFrame(({ clock }) => {
-    if (!glintLightRef.current || isReducedMotion) return;
+    if (isReducedMotion) return;
     const t = clock.getElapsedTime();
-    // Sweeping point light along X axis from -3 to 3
-    glintLightRef.current.position.x = Math.sin(t * 0.8) * 3.2;
+    // Sweeping primary glint light along X and Y axes
+    if (glintLightRef.current) {
+      glintLightRef.current.position.x = Math.sin(t * 1.1) * 3.4;
+      glintLightRef.current.position.y = 0.35 + Math.cos(t * 2.2) * 0.15;
+      glintLightRef.current.intensity = 3.6 + Math.sin(t * 2.2) * 1.2;
+    }
+    // Secondary counter-glint along the lower accent filigree
+    if (secondaryLightRef.current) {
+      secondaryLightRef.current.position.x = -Math.sin(t * 0.9) * 2.8;
+      secondaryLightRef.current.intensity = 2.0 + Math.cos(t * 1.8) * 0.8;
+    }
   });
 
   return (
@@ -27,9 +38,17 @@ export const BrandTypography3D = ({ isReducedMotion = false }) => {
       <pointLight
         ref={glintLightRef}
         position={[0, 0.5, 1.2]}
-        intensity={3.8}
-        color="#fff1c2"
-        distance={4.0}
+        intensity={4.2}
+        color="#fff4d0"
+        distance={4.5}
+      />
+      {/* Secondary Ambient Accent Light */}
+      <pointLight
+        ref={secondaryLightRef}
+        position={[0, -0.2, 0.9]}
+        intensity={2.2}
+        color="#f59e0b"
+        distance={3.2}
       />
 
       {/* 1. Primary Brand Name: SAVORIA in 3D Extruded Serif */}

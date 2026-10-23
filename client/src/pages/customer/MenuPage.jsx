@@ -6,9 +6,10 @@ import { Button } from '../../components/common/Button';
 import { Badge } from '../../components/common/Badge';
 import { LoadingSpinner } from '../../components/common/LoadingSpinner';
 import { useCart } from '../../hooks/useCart';
-import { Search, Utensils, Info, Check, Filter, AlertTriangle, Sparkles, X, ArrowUpDown, Box } from 'lucide-react';
+import { Search, Utensils, Info, Check, Filter, AlertTriangle, Sparkles, X, ArrowUpDown, Box, ZoomIn } from 'lucide-react';
 import { Food3DCard } from '../../components/3d/Food3DCard';
 import { Food3DViewer } from '../../components/3d/Food3DViewer';
+import { ImageZoomModal } from '../../components/common/ImageZoomModal';
 
 const DIETARY_OPTIONS = ['All', 'Vegetarian', 'Vegan', 'Gluten-Free', 'Dairy-Free', 'Spicy', 'Nut-Free', 'Halal'];
 
@@ -20,6 +21,7 @@ export const MenuPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeSearch, setActiveSearch] = useState('');
   const [selectedDishModal, setSelectedDishModal] = useState(null);
+  const [zoomedDish, setZoomedDish] = useState(null);
   const [addedNotification, setAddedNotification] = useState(null);
 
   const { addToCart } = useCart();
@@ -327,6 +329,7 @@ export const MenuPage = () => {
                 onSelectDish={(selected) => setSelectedDishModal(selected)}
                 onAddDish={handleAddDish}
                 onView3D={(selected) => setSelectedDishModal(selected)}
+                onZoomImage={(selected) => setZoomedDish(selected)}
               />
             ))}
           </div>
@@ -366,6 +369,34 @@ export const MenuPage = () => {
             }}>
               <div style={{ position: 'relative' }}>
                 <Food3DViewer dish={selectedDishModal} height="320px" isOpen={!!selectedDishModal} />
+                <button
+                  type="button"
+                  id="dish-detail-magnify-photo-btn"
+                  onClick={() => setZoomedDish(selectedDishModal)}
+                  title="Magnify high-resolution culinary photography"
+                  style={{
+                    position: 'absolute',
+                    bottom: '0.85rem',
+                    right: '0.85rem',
+                    zIndex: 25,
+                    backgroundColor: 'rgba(11, 12, 16, 0.85)',
+                    backdropFilter: 'blur(8px)',
+                    border: '1px solid rgba(230, 175, 93, 0.5)',
+                    borderRadius: '9999px',
+                    padding: '0.4rem 0.85rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.4rem',
+                    fontSize: '0.75rem',
+                    fontWeight: 600,
+                    color: '#fcd34d',
+                    cursor: 'pointer',
+                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5)'
+                  }}
+                >
+                  <ZoomIn size={13} />
+                  <span>Zoom Photo</span>
+                </button>
                 <button
                   id="close-dish-modal-btn"
                   onClick={() => setSelectedDishModal(null)}
@@ -500,6 +531,13 @@ export const MenuPage = () => {
           </div>,
           document.body
         )}
+
+        {/* High-Resolution Culinary Photography Zoom Lightbox */}
+        <ImageZoomModal
+          dish={zoomedDish}
+          isOpen={!!zoomedDish}
+          onClose={() => setZoomedDish(null)}
+        />
       </div>
     </div>
   );
