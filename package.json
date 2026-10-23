@@ -1,0 +1,40 @@
+{
+  "name": "restaurantpro",
+  "version": "1.0.0",
+  "description": "RestaurantPro - Full-stack Production Restaurant Management and Ordering Platform",
+  "main": "server/src/server.js",
+  "scripts": {
+    "setup": "npm install && npm --prefix server install && npm --prefix client install",
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"blue,magenta\" \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "build:client": "npm --prefix client run build",
+    "start": "npm --prefix server run start",
+    "seed": "npm --prefix server run seed",
+    "smoke": "npm --prefix server run smoke",
+    "test": "npm --prefix server test && npm --prefix client test",
+    "test:server": "npm --prefix server test",
+    "test:client": "npm --prefix client test",
+    "test:e2e": "node --test e2e/restaurant.spec.js"
+  },
+  "keywords": [
+    "restaurant",
+    "food-ordering",
+    "table-reservation",
+    "react",
+    "vite",
+    "tailwind",
+    "redux-toolkit",
+    "rtk-query",
+    "express",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "concurrently": "^8.2.2",
+    "puppeteer-core": "^25.14.0"
+  }
+}

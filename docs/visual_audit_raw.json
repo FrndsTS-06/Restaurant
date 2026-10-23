@@ -1,0 +1,2514 @@
+{
+  "issuesFound": [],
+  "reportResults": [
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/menu",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/about",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/contact",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/reservation",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/cart",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/checkout",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/orders/track",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/privacy",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/terms",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/login",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/register",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/forgot-password",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/reset-password",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/admin/dashboard",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/admin/orders",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/admin/menu",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/admin/categories",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/admin/reservations",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/admin/reviews",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/admin/coupons",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/admin/notifications",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/admin/contact",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/admin/customers",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/admin/staff",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/admin/payments",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/admin/reports",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "320px (Mobile S)",
+      "width": 320,
+      "route": "/admin/settings",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/menu",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/about",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/contact",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/reservation",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/cart",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/checkout",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/orders/track",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/privacy",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/terms",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/login",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/register",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/forgot-password",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/reset-password",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/admin/dashboard",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/admin/orders",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/admin/menu",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/admin/categories",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/admin/reservations",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/admin/reviews",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/admin/coupons",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/admin/notifications",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/admin/contact",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/admin/customers",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/admin/staff",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/admin/payments",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/admin/reports",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "375px (Mobile M)",
+      "width": 375,
+      "route": "/admin/settings",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/menu",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/about",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/contact",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/reservation",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/cart",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/checkout",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/orders/track",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/privacy",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/terms",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/login",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/register",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/forgot-password",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/reset-password",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/admin/dashboard",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/admin/orders",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/admin/menu",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/admin/categories",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/admin/reservations",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/admin/reviews",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/admin/coupons",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/admin/notifications",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/admin/contact",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/admin/customers",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/admin/staff",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/admin/payments",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/admin/reports",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "390px (Mobile L)",
+      "width": 390,
+      "route": "/admin/settings",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/menu",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/about",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/contact",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/reservation",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/cart",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/checkout",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/orders/track",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/privacy",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/terms",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/login",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/register",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/forgot-password",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/reset-password",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/admin/dashboard",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/admin/orders",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/admin/menu",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/admin/categories",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/admin/reservations",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/admin/reviews",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/admin/coupons",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/admin/notifications",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/admin/contact",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/admin/customers",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/admin/staff",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/admin/payments",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/admin/reports",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "430px (Mobile XL)",
+      "width": 430,
+      "route": "/admin/settings",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/menu",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/about",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/contact",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/reservation",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/cart",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/checkout",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/orders/track",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/privacy",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/terms",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/login",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/register",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/forgot-password",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/reset-password",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/admin/dashboard",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/admin/orders",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/admin/menu",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/admin/categories",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/admin/reservations",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/admin/reviews",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/admin/coupons",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/admin/notifications",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/admin/contact",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/admin/customers",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/admin/staff",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/admin/payments",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/admin/reports",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "768px (Tablet)",
+      "width": 768,
+      "route": "/admin/settings",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/menu",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/about",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/contact",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/reservation",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/cart",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/checkout",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/orders/track",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/privacy",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/terms",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/login",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/register",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/forgot-password",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/reset-password",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/admin/dashboard",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/admin/orders",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/admin/menu",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/admin/categories",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/admin/reservations",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/admin/reviews",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/admin/coupons",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/admin/notifications",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/admin/contact",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/admin/customers",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/admin/staff",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/admin/payments",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/admin/reports",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1024px (Small Laptop)",
+      "width": 1024,
+      "route": "/admin/settings",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/menu",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/about",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/contact",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/reservation",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/cart",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/checkout",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/orders/track",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/privacy",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/terms",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/login",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/register",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/forgot-password",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/reset-password",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/admin/dashboard",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/admin/orders",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/admin/menu",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/admin/categories",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/admin/reservations",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/admin/reviews",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/admin/coupons",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/admin/notifications",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/admin/contact",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/admin/customers",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/admin/staff",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/admin/payments",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/admin/reports",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1280px (Desktop)",
+      "width": 1280,
+      "route": "/admin/settings",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/menu",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/about",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/contact",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/reservation",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/cart",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/checkout",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/orders/track",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/privacy",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/terms",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/login",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/register",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/forgot-password",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/reset-password",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/admin/dashboard",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/admin/orders",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/admin/menu",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/admin/categories",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/admin/reservations",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/admin/reviews",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/admin/coupons",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/admin/notifications",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/admin/contact",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/admin/customers",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/admin/staff",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/admin/payments",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/admin/reports",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1440px (Desktop L)",
+      "width": 1440,
+      "route": "/admin/settings",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/menu",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/about",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/contact",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/reservation",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/cart",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/checkout",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/orders/track",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/privacy",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/terms",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/login",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/register",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/forgot-password",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/reset-password",
+      "type": "customer",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": [],
+      "navbarCovering": false,
+      "consoleErrors": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/admin/dashboard",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/admin/orders",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/admin/menu",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/admin/categories",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/admin/reservations",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/admin/reviews",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/admin/coupons",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/admin/notifications",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/admin/contact",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/admin/customers",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/admin/staff",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/admin/payments",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/admin/reports",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    },
+    {
+      "viewport": "1920px (Desktop FHD)",
+      "width": 1920,
+      "route": "/admin/settings",
+      "type": "admin",
+      "hasOverflow": false,
+      "overflowDelta": 0,
+      "overflowingElements": []
+    }
+  ]
+}

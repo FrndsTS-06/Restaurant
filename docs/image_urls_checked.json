@@ -1,0 +1,230 @@
+[
+  {
+    "url": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80",
+    "status": 200,
+    "contentType": "image/jpeg",
+    "files": [
+      "client\\src\\components\\customer\\HeroBanner.jsx"
+    ],
+    "ok": true
+  },
+  {
+    "url": "https://images.unsplash.com/...",
+    "status": 404,
+    "contentType": "text/html,text/html",
+    "files": [
+      "client\\src\\pages\\admin\\AdminCategoriesPage.jsx"
+    ],
+    "ok": false
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80",
+    "status": 200,
+    "contentType": "image/jpeg",
+    "files": [
+      "client\\src\\pages\\admin\\AdminCustomersPage.jsx",
+      "client\\src\\pages\\customer\\ProfilePage.jsx",
+      "server\\src\\models\\User.js"
+    ],
+    "ok": true
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+    "status": 200,
+    "contentType": "image/jpeg",
+    "files": [
+      "client\\src\\pages\\admin\\AdminMenuPage.jsx",
+      "client\\src\\pages\\admin\\AdminMenuPage.jsx"
+    ],
+    "ok": true
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80",
+    "status": 200,
+    "contentType": "image/jpeg",
+    "files": [
+      "client\\src\\pages\\admin\\AdminMenuPage.jsx",
+      "server\\src\\config\\cloudinary.js",
+      "server\\src\\config\\cloudinary.js",
+      "server\\src\\controllers\\menuController.js",
+      "server\\src\\models\\MenuItem.js"
+    ],
+    "ok": true
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=600&q=80",
+    "status": 200,
+    "contentType": "image/jpeg",
+    "files": [
+      "client\\src\\pages\\customer\\AboutPage.jsx"
+    ],
+    "ok": true
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=600&q=80",
+    "status": 200,
+    "contentType": "image/jpeg",
+    "files": [
+      "client\\src\\pages\\customer\\AboutPage.jsx"
+    ],
+    "ok": true
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80",
+    "status": 200,
+    "contentType": "image/jpeg",
+    "files": [
+      "client\\src\\pages\\customer\\AboutPage.jsx"
+    ],
+    "ok": true
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1200&q=80",
+    "status": 200,
+    "contentType": "image/jpeg",
+    "files": [
+      "client\\src\\pages\\customer\\AboutPage.jsx"
+    ],
+    "ok": true
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1541014741259-de529411b96a?auto=format&fit=crop&w=600&q=80",
+    "status": 200,
+    "contentType": "image/jpeg",
+    "files": [
+      "client\\src\\pages\\customer\\HomePage.jsx",
+      "server\\src\\models\\Category.js",
+      "server\\src\\utils\\seedData.js"
+    ],
+    "ok": true
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+    "status": 200,
+    "contentType": "image/jpeg",
+    "files": [
+      "client\\src\\pages\\customer\\HomePage.jsx",
+      "server\\src\\utils\\seedData.js"
+    ],
+    "ok": true
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1579372786545-d24232daf58c?auto=format&fit=crop&w=600&q=80",
+    "status": 200,
+    "contentType": "image/jpeg",
+    "files": [
+      "client\\src\\pages\\customer\\HomePage.jsx",
+      "server\\src\\utils\\seedData.js"
+    ],
+    "ok": true
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80",
+    "status": 200,
+    "contentType": "image/jpeg",
+    "files": [
+      "client\\src\\pages\\customer\\HomePage.jsx",
+      "server\\src\\utils\\seedData.js"
+    ],
+    "ok": true
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=80",
+    "status": 200,
+    "contentType": "image/jpeg",
+    "files": [
+      "client\\src\\pages\\customer\\HomePage.jsx"
+    ],
+    "ok": true
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=800&q=80",
+    "status": 200,
+    "contentType": "image/jpeg",
+    "files": [
+      "client\\src\\services\\menuService.js",
+      "server\\src\\utils\\seedData.js"
+    ],
+    "ok": true
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1592417817098-8f3d6eb22513?auto=format&fit=crop&w=800&q=80",
+    "status": 404,
+    "contentType": "text/html,text/html",
+    "files": [
+      "client\\src\\services\\menuService.js",
+      "server\\src\\utils\\seedData.js"
+    ],
+    "ok": false
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80",
+    "status": 200,
+    "contentType": "image/jpeg",
+    "files": [
+      "client\\src\\services\\menuService.js",
+      "server\\src\\utils\\seedData.js"
+    ],
+    "ok": true
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80",
+    "status": 200,
+    "contentType": "image/jpeg",
+    "files": [
+      "client\\src\\services\\menuService.js",
+      "server\\src\\utils\\seedData.js"
+    ],
+    "ok": true
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1621996346565-e3d5d6281290?auto=format&fit=crop&w=800&q=80",
+    "status": 404,
+    "contentType": "text/html,text/html",
+    "files": [
+      "client\\src\\services\\menuService.js",
+      "server\\src\\utils\\seedData.js"
+    ],
+    "ok": false
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1579372786545-d24232daf58c?auto=format&fit=crop&w=800&q=80",
+    "status": 200,
+    "contentType": "image/jpeg",
+    "files": [
+      "client\\src\\services\\menuService.js",
+      "server\\src\\utils\\seedData.js"
+    ],
+    "ok": true
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80",
+    "status": 200,
+    "contentType": "image/jpeg",
+    "files": [
+      "client\\src\\services\\menuService.js",
+      "server\\src\\utils\\seedData.js"
+    ],
+    "ok": true
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80",
+    "status": 200,
+    "contentType": "image/jpeg",
+    "files": [
+      "client\\src\\services\\menuService.js",
+      "server\\src\\utils\\seedData.js"
+    ],
+    "ok": true
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80",
+    "status": 200,
+    "contentType": "image/jpeg",
+    "files": [
+      "client\\src\\services\\menuService.js",
+      "server\\src\\utils\\seedData.js"
+    ],
+    "ok": true
+  }
+]
