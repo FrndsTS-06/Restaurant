@@ -18,6 +18,7 @@ import {
   TicketPercent,
   Mail,
   MessageSquare,
+  PackagePlus,
   Menu,
   X
 } from 'lucide-react';
@@ -49,6 +50,7 @@ export const AdminLayout = () => {
     { label: 'Orders & Dispatch', path: '/admin/orders', icon: <ClipboardList size={18} /> },
     { label: 'Culinary Menu', path: '/admin/menu', icon: <UtensilsCrossed size={18} /> },
     { label: 'Dish Categories', path: '/admin/categories', icon: <Tags size={18} /> },
+    { label: 'Purchases & Inbound', path: '/admin/purchases', icon: <PackagePlus size={18} /> },
     { label: 'Table Reservations', path: '/admin/reservations', icon: <CalendarCheck size={18} /> },
     { label: 'Guest Reviews', path: '/admin/reviews', icon: <Star size={18} /> },
     { label: 'Promos & Coupons', path: '/admin/coupons', icon: <TicketPercent size={18} /> },

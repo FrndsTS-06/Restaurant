@@ -19,7 +19,9 @@ import { Button } from '../../components/common/Button';
 import { Badge } from '../../components/common/Badge';
 import { LoadingSpinner } from '../../components/common/LoadingSpinner';
 import { Food3DViewer } from '../../components/3d/Food3DViewer';
+import { PurchasesTab } from '../../components/admin/PurchasesTab';
 import {
+  PackagePlus,
   Plus,
   Trash2,
   Edit3,
@@ -706,6 +708,26 @@ export const AdminMenuPage = () => {
         >
           <FolderPlus size={18} /> Categories Taxonomy ({categories.length})
         </button>
+
+        <button
+          id="menu-tab-purchases-btn"
+          onClick={() => setActiveTab('purchases')}
+          style={{
+            padding: '0.75rem 1.25rem',
+            background: 'none',
+            border: 'none',
+            borderBottom: activeTab === 'purchases' ? '2px solid var(--accent-gold)' : '2px solid transparent',
+            color: activeTab === 'purchases' ? 'var(--accent-gold)' : 'var(--text-secondary)',
+            fontWeight: 600,
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            fontSize: '0.95rem'
+          }}
+        >
+          <PackagePlus size={18} /> Purchases & Procurement
+        </button>
       </div>
 
       {/* ========================================================= */}
@@ -1042,6 +1064,15 @@ export const AdminMenuPage = () => {
               ))}
             </div>
           )}
+        </div>
+      )}
+
+      {/* ========================================================= */}
+      {/* TAB 3: PURCHASES & PROCUREMENT */}
+      {/* ========================================================= */}
+      {activeTab === 'purchases' && (
+        <div style={{ marginTop: '1.5rem' }}>
+          <PurchasesTab />
         </div>
       )}
 

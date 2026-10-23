@@ -25,6 +25,7 @@ const AdminDashboardPage = lazy(() => import('../pages/admin/AdminDashboardPage'
 const AdminOrdersPage = lazy(() => import('../pages/admin/AdminOrdersPage').then(m => ({ default: m.AdminOrdersPage })));
 const AdminMenuPage = lazy(() => import('../pages/admin/AdminMenuPage').then(m => ({ default: m.AdminMenuPage })));
 const AdminCategoriesPage = lazy(() => import('../pages/admin/AdminCategoriesPage').then(m => ({ default: m.AdminCategoriesPage })));
+const AdminPurchasesPage = lazy(() => import('../pages/admin/AdminPurchasesPage').then(m => ({ default: m.AdminPurchasesPage })));
 const AdminReservationsPage = lazy(() => import('../pages/admin/AdminReservationsPage').then(m => ({ default: m.AdminReservationsPage })));
 const AdminReviewsPage = lazy(() => import('../pages/admin/AdminReviewsPage').then(m => ({ default: m.AdminReviewsPage })));
 const AdminCouponsPage = lazy(() => import('../pages/admin/AdminCouponsPage').then(m => ({ default: m.AdminCouponsPage })));
@@ -87,6 +88,7 @@ export const AppRoutes = () => {
         <Route path="orders" element={<AdminOrdersPage />} />
         <Route path="menu" element={<AdminMenuPage />} />
         <Route path="categories" element={<AdminCategoriesPage />} />
+        <Route path="purchases" element={<AdminPurchasesPage />} />
         <Route path="reservations" element={<AdminReservationsPage />} />
         <Route path="reviews" element={<AdminReviewsPage />} />
         <Route path="coupons" element={<AdminCouponsPage />} />
