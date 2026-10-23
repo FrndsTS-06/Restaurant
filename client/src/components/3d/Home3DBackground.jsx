@@ -28,6 +28,13 @@ const ContinuousHomepageCameraRig = ({
       const baseZ = size.width < 360 ? 6.2 : size.width < 480 ? 5.6 : size.width < 768 ? 5.1 : size.width < 1024 ? 4.6 : 4.2;
       const baseY = size.width < 640 ? 1.6 : 1.7;
 
+      // When reduced motion is preferred, keep camera firmly at tranquil grand vista without per-frame math
+      if (isReducedMotion) {
+        camera.position.set(0, baseY, baseZ);
+        camera.lookAt(0, 1.25, 0);
+        return;
+      }
+
       // Scroll-controlled cinematic glide across the entire homepage:
       // - At scroll = 0 (Hero): Grand entrance vista of the Avenue Montaigne portico & chandelier
       // - At scroll = 0.35 (Menu Categories): Glide down aisle towards central candlelit table

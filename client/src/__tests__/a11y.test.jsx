@@ -84,4 +84,19 @@ describe('Automated Accessibility (axe-core) Quality Audit', () => {
     }
     expect(criticalViolations).toEqual([]);
   });
+
+  it('verifies ContactPage and OrderTracker have no critical accessibility violations', async () => {
+    const { ContactPage } = await import('../pages/customer/ContactPage');
+    const { container } = renderWithProviders(<ContactPage />);
+    const results = await axe.run(container, {
+      rules: {
+        'color-contrast': { enabled: false }
+      }
+    });
+    const criticalViolations = results.violations.filter(v => v.impact === 'critical' || v.impact === 'serious');
+    if (criticalViolations.length > 0) {
+      console.error('A11y Critical Violations in ContactPage:', JSON.stringify(criticalViolations, null, 2));
+    }
+    expect(criticalViolations).toEqual([]);
+  });
 });

@@ -46,4 +46,29 @@ if (root) {
   root.cancelAnimationFrame = caf;
 }
 
+// Polyfill ResizeObserver for jsdom test runner
+class MockResizeObserver {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+globalThis.ResizeObserver = globalThis.ResizeObserver || MockResizeObserver;
+if (typeof window !== 'undefined') {
+  window.ResizeObserver = window.ResizeObserver || MockResizeObserver;
+}
+
+// Polyfill IntersectionObserver for jsdom test runner
+class MockIntersectionObserver {
+  constructor(callback) {
+    this.callback = callback;
+  }
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+globalThis.IntersectionObserver = globalThis.IntersectionObserver || MockIntersectionObserver;
+if (typeof window !== 'undefined') {
+  window.IntersectionObserver = window.IntersectionObserver || MockIntersectionObserver;
+}
+
 

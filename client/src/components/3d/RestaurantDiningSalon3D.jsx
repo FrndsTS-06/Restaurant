@@ -28,23 +28,23 @@ export const RestaurantDiningSalon3D = ({
   const candleLightRef = useRef();
   const wineGlowRef = useRef();
 
-  // Gentle idle candle flicker and dynamic ambient light modulation
+  // Gentle idle candle flicker and dynamic ambient light modulation (optimized on mobile)
   useFrame(({ clock }) => {
     if (isReducedMotion) return;
     const t = clock.getElapsedTime();
 
-    // 1. Realistic candle flame micro-flicker
-    if (candleLightRef.current) {
+    // 1. Realistic candle flame micro-flicker (desktop only to preserve mobile battery/GPU)
+    if (!isMobile && candleLightRef.current) {
       candleLightRef.current.intensity = 1.35 + Math.sin(t * 7.5) * 0.18 + Math.cos(t * 13.2) * 0.08;
     }
 
-    // 2. Subtle wine display breathing back-glow
-    if (wineGlowRef.current) {
+    // 2. Subtle wine display breathing back-glow (desktop only)
+    if (!isMobile && wineGlowRef.current) {
       wineGlowRef.current.intensity = 1.1 + Math.sin(t * 1.8) * 0.15;
     }
 
-    // 3. Subtle camera/salon parallax response
-    if (salonGroupRef.current) {
+    // 3. Subtle camera/salon parallax response (desktop only, mobile touch doesn't mouse-hover)
+    if (salonGroupRef.current && !isMobile) {
       const targetRotY = (mousePos.x * 0.08);
       const targetRotX = -(mousePos.y * 0.05);
       salonGroupRef.current.rotation.y = THREE.MathUtils.lerp(salonGroupRef.current.rotation.y, targetRotY, 0.05);
@@ -55,6 +55,8 @@ export const RestaurantDiningSalon3D = ({
   // Base responsive scaling
   const scale = isMobile ? 0.72 : 0.88;
   const posY = isMobile ? -0.35 : -0.45;
+  const wineShelves = isMobile ? [-0.4, 0.4] : [-0.8, -0.2, 0.4, 1.0];
+  const wineBottles = isMobile ? [-0.3, 0, 0.3] : [-0.45, -0.22, 0, 0.22, 0.45];
 
   return (
     <group ref={salonGroupRef} scale={[scale, scale, scale]} position={[0, posY, 0]}>
@@ -369,19 +371,23 @@ export const RestaurantDiningSalon3D = ({
           <boxGeometry args={[1.5, 2.6, 0.35]} />
           <meshStandardMaterial color="#0f1118" roughness={0.5} metalness={0.3} />
         </mesh>
-        {/* Backlit Glass Shelves */}
-        {[-0.8, -0.2, 0.4, 1.0].map((y, idx) => (
+        {/* Backlit Glass Shelves (Responsive shelf & bottle counts) */}
+        {wineShelves.map((y, idx) => (
           <group key={idx} position={[0, y, 0]}>
             <mesh position={[0, 0, 0.08]}>
               <boxGeometry args={[1.4, 0.02, 0.25]} />
-              <meshPhysicalMaterial color="#ffffff" transmission={0.8} roughness={0.1} />
+              <meshStandardMaterial color="#ffffff" opacity={0.8} transparent roughness={0.1} />
             </mesh>
             {/* Rows of Curated Vintage Wine Bottles with Gold Neck Capsules */}
-            {[-0.45, -0.22, 0, 0.22, 0.45].map((bx, bIdx) => (
+            {wineBottles.map((bx, bIdx) => (
               <group key={bIdx} position={[bx, 0.14, 0.06]}>
                 <mesh position={[0, 0, 0]}>
                   <cylinderGeometry args={[0.038, 0.038, 0.22, 10]} />
-                  <meshPhysicalMaterial color="#1a2e1e" roughness={0.2} metalness={0.3} clearcoat={0.9} />
+                  {isMobile ? (
+                    <meshStandardMaterial color="#1a2e1e" roughness={0.3} metalness={0.2} />
+                  ) : (
+                    <meshPhysicalMaterial color="#1a2e1e" roughness={0.2} metalness={0.3} clearcoat={0.9} />
+                  )}
                 </mesh>
                 <mesh position={[0, 0.13, 0]}>
                   <cylinderGeometry args={[0.014, 0.022, 0.06, 10]} />
