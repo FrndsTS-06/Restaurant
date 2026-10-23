@@ -10,15 +10,16 @@ const {
 } = require('../controllers/orderController');
 const { protect, authorize, optionalProtect } = require('../middleware/auth');
 const { validateOrderPayload } = require('../validators/orderValidator');
+const { trackingLimiter } = require('../middleware/rateLimiter');
 
 // Public or customer order creation (attaches user if authenticated)
 router.post('/', optionalProtect, validateOrderPayload, createOrder);
 
-// Customer view their own orders
-router.get('/my-orders', optionalProtect, getMyOrders);
+// Customer view their own orders (rate-limited)
+router.get('/my-orders', trackingLimiter, optionalProtect, getMyOrders);
 
-// Track / view single order details
-router.get('/:id', optionalProtect, getOrderById);
+// Track / view single order details (rate-limited)
+router.get('/:id', trackingLimiter, optionalProtect, getOrderById);
 
 // Customer / staff order cancellation
 router.post('/:id/cancel', optionalProtect, cancelOrder);

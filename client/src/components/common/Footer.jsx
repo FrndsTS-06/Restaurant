@@ -150,6 +150,7 @@ export const Footer = () => {
               <Link to="/menu" className="hover:text-amber-400 transition-colors">A La Carte</Link>
               <Link to="/reservation" className="hover:text-amber-400 transition-colors">Reservations</Link>
               <Link to="/contact" className="hover:text-amber-400 transition-colors">Concierge</Link>
+              <Link to="/contact#track-order" id="footer-track-order-link" className="hover:text-amber-400 transition-colors">Track Order</Link>
               <Link to="/privacy" className="hover:text-amber-400 transition-colors">Privacy Policy</Link>
               <Link to="/terms" className="hover:text-amber-400 transition-colors">Terms of Service</Link>
             </div>

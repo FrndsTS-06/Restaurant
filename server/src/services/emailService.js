@@ -213,6 +213,9 @@ const sendOrderPlacedEmail = async (order) => {
           <strong>Service Modality:</strong> <span style="text-transform: capitalize;">${order.orderType}</span><br/>
           <strong>Payment Status:</strong> <span style="text-transform: capitalize;">${order.paymentStatus}</span> (${order.paymentMethod || 'Razorpay'})
         </p>
+        <p style="color: #888; font-size: 13px; margin-top: 15px;">
+          Track your live kitchen preparation status: <a href="http://localhost:5173/contact?orderNumber=${encodeURIComponent(order.orderNumber)}&email=${encodeURIComponent(order.customer.email)}#track-order" style="color: #e6af5d; font-weight: bold;">Track Live Order</a>
+        </p>
       </div>
 
       <div style="text-align: center; margin-top: 25px; color: #666; font-size: 12px;">
@@ -262,7 +265,7 @@ const sendOrderStatusUpdateEmail = async (order, newStatus, note = '') => {
         ${note ? `<p style="background-color: #262626; padding: 10px; border-left: 3px solid #e6af5d; color: #ddd; font-style: italic;">"${note}"</p>` : ''}
 
         <p style="color: #888; font-size: 13px; margin-top: 20px;">
-          You can track live progress anytime at: <a href="http://localhost:5173/orders/track?email=${encodeURIComponent(order.customer.email)}" style="color: #e6af5d;">Track Live Status</a>
+          You can track live progress anytime at: <a href="http://localhost:5173/contact?orderNumber=${encodeURIComponent(order.orderNumber)}&email=${encodeURIComponent(order.customer.email)}#track-order" style="color: #e6af5d;">Track Live Status</a>
         </p>
       </div>
     </div>`;

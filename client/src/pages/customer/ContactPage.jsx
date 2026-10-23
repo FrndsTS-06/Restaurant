@@ -1,6 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock, ShieldCheck, Car, Send, CheckCircle2, AlertCircle, UtensilsCrossed, ArrowRight } from 'lucide-react';
+import { useSearchParams, useLocation } from 'react-router-dom';
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  ShieldCheck,
+  Car,
+  Send,
+  CheckCircle2,
+  AlertCircle,
+  UtensilsCrossed,
+  ArrowDown,
+  Sparkles
+} from 'lucide-react';
 import { Button } from '../../components/common/Button';
 import { Badge } from '../../components/common/Badge';
 import { useGetSettingsQuery, useSubmitContactFormMutation } from '../../store/api/apiSlice';
@@ -11,29 +24,36 @@ export const ContactPage = () => {
   const settings = settingsRes?.data;
   const [submitContact, { isLoading }] = useSubmitContactFormMutation();
 
-  const [searchParams, setSearchParams] = useSearchParams();
-  const initialTab = (searchParams.get('tab') === 'track' || searchParams.get('orderNumber') || searchParams.get('email')) ? 'track' : 'concierge';
-  const [activeTab, setActiveTab] = useState(initialTab);
+  const [searchParams] = useSearchParams();
+  const location = useLocation();
 
+  // Scroll to anchor on mount, route change, or hash change
   useEffect(() => {
-    if (searchParams.get('tab') === 'track' || searchParams.get('orderNumber') || searchParams.get('email')) {
-      setActiveTab('track');
-    }
-  }, [searchParams]);
+    const handleScrollToTarget = () => {
+      const hash = window.location.hash;
+      const hasOrderParam = !!searchParams.get('orderNumber') || searchParams.get('tab') === 'track';
 
-  const switchTab = (tab) => {
-    setActiveTab(tab);
-    if (tab === 'track') {
-      const orderNumber = searchParams.get('orderNumber');
-      const email = searchParams.get('email');
-      const newParams = { tab: 'track' };
-      if (orderNumber) newParams.orderNumber = orderNumber;
-      if (email) newParams.email = email;
-      setSearchParams(newParams);
-    } else {
-      setSearchParams({});
-    }
-  };
+      let targetId = null;
+      if (hash === '#track-order' || (!hash && hasOrderParam)) {
+        targetId = 'track-order';
+      } else if (hash === '#concierge-inquiries' || hash === '#contact-form') {
+        targetId = 'concierge-inquiries';
+      }
+
+      if (targetId) {
+        setTimeout(() => {
+          const el = document.getElementById(targetId);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 150);
+      }
+    };
+
+    handleScrollToTarget();
+    window.addEventListener('hashchange', handleScrollToTarget);
+    return () => window.removeEventListener('hashchange', handleScrollToTarget);
+  }, [location.hash, searchParams]);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -65,6 +85,14 @@ export const ContactPage = () => {
     : 'New York, NY 10022';
   const contactPhone = settings?.contactPhone || '+1 (212) 555-0840';
   const contactEmail = settings?.contactEmail || 'concierge@savoria.com';
+
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.history.replaceState(null, '', `#${id}`);
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -148,83 +176,61 @@ export const ContactPage = () => {
 
   return (
     <div className="contact-page animate-fade-in text-slate-200">
-      {/* Header with Navigation Switcher */}
-      <section className="pt-24 pb-14 sm:pt-28 sm:pb-16 border-b border-white/10 bg-[#13151b]/60 text-center">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-          <Badge variant="gold">
-            {activeTab === 'track' ? 'Kitchen Dispatch & Fulfillment' : 'Guest Concierge Desk'}
+      {/* Header & Quick Navigation Hero */}
+      <section className="pt-24 pb-14 sm:pt-28 sm:pb-16 border-b border-white/10 bg-[#13151b]/80 text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-radial-gradient from-amber-500/5 via-transparent to-transparent pointer-events-none" />
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl relative z-10">
+          <Badge variant="gold" icon={<Sparkles size={13} />}>
+            Guest Hospitality & Culinary Dispatch
           </Badge>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mt-4 mb-4">
-            {activeTab === 'track' ? (
-              <>Live Order <span className="gradient-text-gold">Tracking</span></>
-            ) : (
-              <>Connect With <span className="gradient-text-gold">{restaurantName}</span></>
-            )}
+            Connect With <span className="gradient-text-gold">{restaurantName}</span>
           </h1>
-          <p className="text-slate-300 text-base leading-relaxed">
-            {activeTab === 'track'
-              ? 'Observe the live culinary journey of your order from kitchen preparation to white-glove courier dispatch.'
-              : 'Our concierge team is at your disposal for bespoke dining arrangements, sommelier requests, and private salon reservations.'}
+          <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Reach our concierge team for dining inquiries, sommelier cellar consultations, and private salon buyouts — or track the live kitchen progress of your culinary orders.
           </p>
 
-          {/* Dual Tab Switcher */}
-          <div className="flex justify-center mt-8">
-            <div className="inline-flex p-1.5 rounded-2xl bg-[#0b0c10] border border-white/10 shadow-inner">
-              <button
-                id="contact-concierge-tab-btn"
-                type="button"
-                onClick={() => switchTab('concierge')}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
-                  activeTab === 'concierge'
-                    ? 'bg-amber-400 text-black shadow-lg shadow-amber-400/20'
-                    : 'text-slate-400 hover:text-white'
-                }`}
-              >
-                <Mail size={16} /> Guest Concierge & Inquiries
-              </button>
-              <button
-                id="contact-tracking-tab-btn"
-                type="button"
-                onClick={() => switchTab('track')}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
-                  activeTab === 'track'
-                    ? 'bg-amber-400 text-black shadow-lg shadow-amber-400/20'
-                    : 'text-slate-400 hover:text-white'
-                }`}
-              >
-                <UtensilsCrossed size={16} /> Live Order Tracking
-              </button>
-            </div>
+          {/* Quick-Action Navigation Pills */}
+          <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
+            <button
+              id="jump-track-order-btn"
+              type="button"
+              onClick={() => scrollToSection('track-order')}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-amber-400 text-black hover:bg-amber-300 shadow-lg shadow-amber-400/20 transition-all cursor-pointer"
+            >
+              <UtensilsCrossed size={16} /> Live Order Tracking <ArrowDown size={14} />
+            </button>
+            <button
+              id="jump-concierge-btn"
+              type="button"
+              onClick={() => scrollToSection('concierge-inquiries')}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white/5 border border-white/15 text-slate-200 hover:text-white hover:bg-white/10 transition-all cursor-pointer"
+            >
+              <Mail size={16} /> Concierge Desk & Inquiries <ArrowDown size={14} />
+            </button>
           </div>
         </div>
       </section>
 
-      {/* Conditional Content: Order Tracking vs Concierge Inquiries */}
-      {activeTab === 'track' ? (
-        <section className="py-16 sm:py-24">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-            <OrderTracker />
-          </div>
-        </section>
-      ) : (
-        /* Main Contact Grid */
-        <section className="py-16 sm:py-24">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-            {/* Quick banner linking to order tracking */}
-            <div className="mb-10 p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm">
-              <div className="flex items-center gap-2 text-amber-300">
-                <UtensilsCrossed size={16} className="shrink-0" />
-                <span>Looking for the live kitchen preparation status of an existing order?</span>
-              </div>
-              <button
-                type="button"
-                onClick={() => switchTab('track')}
-                className="text-amber-400 hover:text-amber-300 font-semibold flex items-center gap-1 cursor-pointer shrink-0"
-              >
-                Switch to Order Tracker <ArrowRight size={14} />
-              </button>
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
+      {/* SECTION 1: Integrated Live Order Tracking Section */}
+      <section
+        id="track-order"
+        className="py-16 sm:py-20 border-b border-white/10 bg-[#0d0f14]/90 scroll-mt-24"
+        aria-label="Order Tracking Section"
+      >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <OrderTracker />
+        </div>
+      </section>
+
+      {/* SECTION 2: Concierge Details & Interactive Inquiry Form */}
+      <section
+        id="concierge-inquiries"
+        className="py-16 sm:py-24 scroll-mt-24"
+        aria-label="Concierge and Inquiries Section"
+      >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
             {/* Contact Details & Info Cards */}
             <div>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-6">
@@ -297,7 +303,7 @@ export const ContactPage = () => {
             </div>
 
             {/* Interactive Inquiry Form */}
-            <div className="bg-[#13151b] border border-white/10 rounded-2xl p-8 sm:p-10 shadow-2xl">
+            <div id="contact-concierge-form" className="bg-[#13151b] border border-white/10 rounded-2xl p-8 sm:p-10 shadow-2xl">
               <h2 className="font-serif text-2xl font-bold text-white mb-2">
                 Send a Message to Our Concierge
               </h2>
@@ -505,8 +511,6 @@ export const ContactPage = () => {
           </div>
         </div>
       </section>
-    )}
-  </div>
-);
+    </div>
+  );
 };
-

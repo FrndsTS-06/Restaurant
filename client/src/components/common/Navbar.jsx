@@ -26,10 +26,7 @@ export const Navbar = () => {
   }, [mobileMenuOpen]);
 
   const isActive = (path) => {
-    if (path.includes('?')) {
-      return (location.pathname + location.search) === path;
-    }
-    return location.pathname === path && !location.search.includes('tab=track');
+    return location.pathname === path;
   };
 
   const navLinks = [
@@ -37,8 +34,7 @@ export const Navbar = () => {
     { label: 'Menu', path: '/menu' },
     { label: 'Reservations', path: '/reservation' },
     { label: 'About', path: '/about' },
-    { label: 'Contact', path: '/contact' },
-    { label: 'Track Order', path: '/contact?tab=track' }
+    { label: 'Contact', path: '/contact' }
   ];
 
   return (

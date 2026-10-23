@@ -389,7 +389,7 @@ export const ProfilePage = () => {
                     </div>
 
                     <div className="flex justify-end pt-2 border-t border-slate-800/60">
-                      <Link to={`/contact?tab=track&orderNumber=${ord.orderNumber}`}>
+                      <Link to={`/contact?orderNumber=${ord.orderNumber}#track-order`}>
                         <button className="text-xs font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1 cursor-pointer">
                           Track Live Status <ArrowRight size={13} />
                         </button>

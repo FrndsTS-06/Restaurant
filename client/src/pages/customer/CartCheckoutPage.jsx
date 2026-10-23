@@ -433,7 +433,7 @@ export const CartCheckoutPage = () => {
           </div>
 
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-            <Link to={`/contact?tab=track&email=${encodeURIComponent(orderSuccess.customer?.email)}`}>
+            <Link to={`/contact?orderNumber=${encodeURIComponent(orderSuccess.orderNumber || '')}&email=${encodeURIComponent(orderSuccess.customer?.email || '')}#track-order`}>
               <Button id="track-order-success-btn">
                 Track Live Order Status
               </Button>

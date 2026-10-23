@@ -41,9 +41,22 @@ const forgotPasswordLimiter = rateLimit({
   }
 });
 
+// Order tracking rate limiter: prevents brute-force enumeration and scraping of order IDs
+const trackingLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: isDevOrTest ? 10000 : 60,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    success: false,
+    message: 'Too many order tracking queries from this IP. Please wait a few minutes before trying again.'
+  }
+});
+
 module.exports = {
   apiLimiter,
   loginLimiter,
-  forgotPasswordLimiter
+  forgotPasswordLimiter,
+  trackingLimiter
 };
 

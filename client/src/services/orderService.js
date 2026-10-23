@@ -7,8 +7,9 @@ export const createOrder = async (orderPayload) => {
   });
 };
 
-export const getOrderById = async (orderId) => {
-  return await request(`/orders/${orderId}`);
+export const getOrderById = async (orderId, verifyEmail = '') => {
+  const query = verifyEmail ? `?email=${encodeURIComponent(verifyEmail)}` : '';
+  return await request(`/orders/${orderId}${query}`);
 };
 
 export const getMyOrders = async (email) => {

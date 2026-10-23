@@ -20,9 +20,12 @@ import {
 
 export const OrderTracker = () => {
   const [searchParams] = useSearchParams();
-  const initialQuery = searchParams.get('orderNumber') || searchParams.get('email') || '';
+  const initialOrderNumber = searchParams.get('orderNumber') || '';
+  const initialEmail = searchParams.get('email') || '';
+  const initialQuery = initialOrderNumber || initialEmail || '';
 
   const [query, setQuery] = useState(initialQuery);
+  const [verificationEmail, setVerificationEmail] = useState(initialEmail);
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -30,7 +33,7 @@ export const OrderTracker = () => {
   const [cancellingOrderId, setCancellingOrderId] = useState(null);
   const [cancelReason, setCancelReason] = useState('');
 
-  const fetchOrders = async (lookupQuery) => {
+  const fetchOrders = async (lookupQuery, emailParam = '') => {
     if (!lookupQuery.trim()) return;
     setLoading(true);
     setError(null);
@@ -38,16 +41,18 @@ export const OrderTracker = () => {
 
     try {
       const trimmed = lookupQuery.trim();
+      const verifyEmail = (emailParam || verificationEmail).trim();
+
       // If looks like an order number (e.g. SAV-1234) or ObjectId
       if (trimmed.toUpperCase().startsWith('SAV-') || trimmed.length === 24) {
-        const res = await getOrderById(trimmed);
+        const res = await getOrderById(trimmed, verifyEmail);
         setOrders(res.data ? [res.data] : []);
       } else {
         const res = await getMyOrders(trimmed);
         setOrders(res.data || []);
       }
     } catch (err) {
-      setError(err.message || 'No orders found matching your search.');
+      setError(err.message || 'No orders found matching your search criteria.');
       setOrders([]);
     } finally {
       setLoading(false);
@@ -56,13 +61,13 @@ export const OrderTracker = () => {
 
   useEffect(() => {
     if (initialQuery) {
-      fetchOrders(initialQuery);
+      fetchOrders(initialQuery, initialEmail);
     }
-  }, [initialQuery]);
+  }, [initialQuery, initialEmail]);
 
   const handleSearch = (e) => {
     e.preventDefault();
-    fetchOrders(query);
+    fetchOrders(query, verificationEmail);
   };
 
   const handleConfirmCancel = async (orderId) => {
@@ -72,7 +77,7 @@ export const OrderTracker = () => {
       setActionMessage(`Order #${res.data?.orderNumber || ''} has been successfully cancelled.`);
       setCancellingOrderId(null);
       setCancelReason('');
-      fetchOrders(query);
+      fetchOrders(query, verificationEmail);
     } catch (err) {
       setError(err.message || 'Failed to cancel order.');
     } finally {
@@ -106,8 +111,8 @@ export const OrderTracker = () => {
   };
 
   return (
-    <div id="integrated-order-tracker" className="order-tracking-section animate-fade-in">
-      <div className="max-w-4xl mx-auto">
+    <div id="track-order" className="order-tracking-section animate-fade-in scroll-mt-24">
+      <div id="integrated-order-tracker" className="max-w-4xl mx-auto">
         <div className="text-center mb-10">
           <Badge variant="gold">Kitchen Dispatch & Fulfillment</Badge>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white mt-3 mb-3">
@@ -121,24 +126,40 @@ export const OrderTracker = () => {
         {/* Search Input Bar */}
         <form
           onSubmit={handleSearch}
-          className="bg-[#13151b] border border-white/10 rounded-2xl p-4 sm:p-5 shadow-2xl mb-8 flex flex-col sm:flex-row gap-3"
+          className="bg-[#13151b] border border-white/10 rounded-2xl p-4 sm:p-5 shadow-2xl mb-8 flex flex-col gap-3"
           aria-label="Order Tracking Search"
         >
-          <div className="relative flex-1">
-            <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
-            <input
-              id="tracking-query-input"
-              type="text"
-              required
-              placeholder="Search by Order # (e.g. SAV-8392) or Customer Email..."
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              className="w-full bg-[#0b0c10] border border-white/15 rounded-xl pl-11 pr-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition-colors"
-            />
+          <div className="flex flex-col sm:flex-row gap-3">
+            <div className="relative flex-1">
+              <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+              <input
+                id="tracking-query-input"
+                type="text"
+                required
+                placeholder="Search by Order # (e.g. SAV-8392) or Customer Email..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                className="w-full bg-[#0b0c10] border border-white/15 rounded-xl pl-11 pr-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition-colors"
+              />
+            </div>
+            <div className="relative flex-1">
+              <input
+                id="tracking-verification-email-input"
+                type="email"
+                placeholder="Verification Email (optional, unmasks full delivery PII)..."
+                value={verificationEmail}
+                onChange={(e) => setVerificationEmail(e.target.value)}
+                className="w-full bg-[#0b0c10] border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition-colors"
+              />
+            </div>
+            <Button id="search-order-status-btn" type="submit" disabled={loading} className="shrink-0">
+              {loading ? 'Tracking...' : 'Track Order'}
+            </Button>
           </div>
-          <Button id="search-order-status-btn" type="submit" disabled={loading} className="shrink-0">
-            {loading ? 'Tracking...' : 'Track Order'}
-          </Button>
+          <div className="text-[11px] text-slate-400 flex flex-wrap items-center justify-between px-1 gap-2">
+            <span>Enter your SAV order number to view real-time cooking & courier progress.</span>
+            <span className="text-amber-400/90 font-medium">🔒 Secure privacy-shielded lookup</span>
+          </div>
         </form>
 
         {actionMessage && (
@@ -178,6 +199,16 @@ export const OrderTracker = () => {
                       <div className="text-xs text-slate-400 mt-1">
                         Customer: <strong className="text-slate-200">{order.customer?.name}</strong> ({order.customer?.email})
                       </div>
+                      {order.isVerifiedCustomer === false && (
+                        <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-[10px] text-amber-300 font-semibold mt-1">
+                          <span>🔒 Privacy Protected • Provide email above to view full address</span>
+                        </div>
+                      )}
+                      {order.isVerifiedCustomer === true && (
+                        <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-[10px] text-emerald-300 font-semibold mt-1">
+                          <CheckCircle2 size={11} /> <span>Verified Customer Details</span>
+                        </div>
+                      )}
                     </div>
                     <div className="sm:text-right">
                       <div className="text-[11px] font-mono uppercase text-slate-400 tracking-wider">SERVICE MODALITY</div>

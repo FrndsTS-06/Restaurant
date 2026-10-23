@@ -8,10 +8,8 @@ import { useLocation, Navigate } from 'react-router-dom';
  */
 export const OrderTrackingPage = () => {
   const location = useLocation();
-  const search = location.search;
-  const target = search
-    ? `/contact?tab=track&${search.replace(/^\?/, '')}`
-    : '/contact?tab=track';
+  const search = location.search ? location.search : '';
+  const target = `/contact${search}#track-order`;
 
   return <Navigate to={target} replace />;
 };

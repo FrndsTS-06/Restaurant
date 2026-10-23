@@ -88,4 +88,29 @@ describe('AppRoutes & Navigation Quality Assurance', () => {
     // Customer lacks admin role -> blocked from admin layout
     expect(screen.queryByText(/Executive Overview/i)).not.toBeInTheDocument();
   });
+
+  it('redirects legacy "/orders/track" route to Contact page order tracker', () => {
+    renderWithProviders(<AppRoutes />, { initialEntries: ['/orders/track'] });
+    expect(screen.getByRole('heading', { name: /Live Order/i })).toBeInTheDocument();
+    expect(screen.getByLabelText(/Order Tracking Search/i)).toBeInTheDocument();
+  });
+
+  it('redirects legacy "/track-order" route to Contact page order tracker', () => {
+    renderWithProviders(<AppRoutes />, { initialEntries: ['/track-order'] });
+    expect(screen.getByRole('heading', { name: /Live Order/i })).toBeInTheDocument();
+    expect(screen.getByLabelText(/Order Tracking Search/i)).toBeInTheDocument();
+  });
+
+  it('renders both order tracking and concierge form on "/contact"', () => {
+    renderWithProviders(<AppRoutes />, { initialEntries: ['/contact'] });
+    expect(screen.getByLabelText(/Order Tracking Search/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/Customer Contact Form/i)).toBeInTheDocument();
+  });
+
+  it('verifies Navbar navigation links do NOT include standalone "Track Order"', () => {
+    renderWithProviders(<AppRoutes />, { initialEntries: ['/'] });
+    const navLinks = screen.getAllByRole('link');
+    const trackOrderLinksInNav = navLinks.filter(l => l.getAttribute('href') === '/orders/track' || l.getAttribute('href') === '/track-order');
+    expect(trackOrderLinksInNav).toHaveLength(0);
+  });
 });

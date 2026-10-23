@@ -52,6 +52,8 @@ export const AppRoutes = () => {
         <Route path="cart" element={<CartPage />} />
         <Route path="checkout" element={<CartCheckoutPage />} />
         <Route path="orders/track" element={<OrderTrackingPage />} />
+        <Route path="track-order" element={<OrderTrackingPage />} />
+        <Route path="track" element={<OrderTrackingPage />} />
         <Route path="login" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />
         <Route path="forgot-password" element={<ForgotPasswordPage />} />

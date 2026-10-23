@@ -351,7 +351,29 @@ const getMyOrders = async (req, res, next) => {
   }
 };
 
-// @desc    Get single order by ID or orderNumber
+// Customer PII protection masking helpers for unverified tracking
+const maskCustomerEmail = (email) => {
+  if (!email || !email.includes('@')) return '***@***.***';
+  const [local, domain] = email.split('@');
+  const visible = local.length > 2 ? local.slice(0, 2) : local.slice(0, 1);
+  return `${visible}***@${domain}`;
+};
+
+const maskCustomerPhone = (phone) => {
+  if (!phone) return '';
+  const digits = phone.replace(/\D/g, '');
+  if (digits.length < 4) return '***-***';
+  return `***-***-${digits.slice(-4)}`;
+};
+
+const maskDeliveryStreet = (street) => {
+  if (!street) return '';
+  const words = street.trim().split(/\s+/);
+  if (words.length <= 2) return `${words[0]} ***`;
+  return `${words.slice(0, 2).join(' ')} *** (Protected)`;
+};
+
+// @desc    Get single order by ID or orderNumber with customer verification & PII shielding
 // @route   GET /api/orders/:id
 const getOrderById = async (req, res, next) => {
   try {
@@ -365,7 +387,47 @@ const getOrderById = async (req, res, next) => {
     if (!order) {
       return sendError(res, 'Order not found', 404);
     }
-    return sendSuccess(res, order, 'Order retrieved');
+
+    const verifyEmail = (req.query.email || req.headers['x-verify-email'] || '').trim().toLowerCase();
+    const verifyPhone = (req.query.phone || req.headers['x-verify-phone'] || '').replace(/\D/g, '');
+
+    const isStaffOrAdmin = req.user && ['admin', 'staff'].includes(req.user.role);
+    const isOwner = req.user && (
+      (order.user && order.user.toString() === req.user.id) ||
+      (order.customer?.email && order.customer.email.toLowerCase() === (req.user.email || '').toLowerCase())
+    );
+    const isEmailVerified = Boolean(verifyEmail && order.customer?.email && order.customer.email.toLowerCase() === verifyEmail);
+    const isPhoneVerified = Boolean(verifyPhone && order.customer?.phone && order.customer.phone.replace(/\D/g, '').endsWith(verifyPhone.slice(-4)));
+
+    const isAuthorized = Boolean(isStaffOrAdmin || isOwner || isEmailVerified || isPhoneVerified);
+
+    if (isAuthorized) {
+      const orderData = order.toObject ? order.toObject() : { ...order };
+      orderData.isVerifiedCustomer = true;
+      return sendSuccess(res, orderData, 'Order retrieved');
+    }
+
+    // Unverified guest access: provide tracking timeline and items, but protect sensitive PII
+    const sanitizedOrder = order.toObject ? order.toObject() : { ...order };
+    sanitizedOrder.isVerifiedCustomer = false;
+    if (sanitizedOrder.customer) {
+      sanitizedOrder.customer = {
+        name: sanitizedOrder.customer.name,
+        email: maskCustomerEmail(sanitizedOrder.customer.email),
+        phone: maskCustomerPhone(sanitizedOrder.customer.phone)
+      };
+    }
+    if (sanitizedOrder.deliveryAddress && sanitizedOrder.deliveryAddress.street) {
+      sanitizedOrder.deliveryAddress = {
+        ...sanitizedOrder.deliveryAddress,
+        street: maskDeliveryStreet(sanitizedOrder.deliveryAddress.street)
+      };
+    }
+    if (sanitizedOrder.paymentTransactionId) {
+      sanitizedOrder.paymentTransactionId = '***REDACTED***';
+    }
+
+    return sendSuccess(res, sanitizedOrder, 'Order status retrieved (sensitive PII protected)');
   } catch (error) {
     next(error);
   }

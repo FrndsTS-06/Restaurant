@@ -498,13 +498,23 @@ test('Cancellation: Active placed order can be cancelled with audit trail', asyn
 // 6. ORDER PERSISTENCE, TRACKING & HISTORY
 // ============================================================================
 
-test('Tracking: Query single order by orderNumber', async () => {
-  const res = await fetch(`${baseUrl}/api/orders/${createdOrderNumber}`);
-  const json = await res.json();
-  assert.strictEqual(res.status, 200);
-  assert.strictEqual(json.data.orderNumber, createdOrderNumber);
-  assert.strictEqual(json.data.customer.email, 'guest@savoria.com');
-  assert.ok(json.data.items.length >= 1);
+test('Tracking: Query single order by orderNumber (unverified masks PII, verified unmasks)', async () => {
+  // 1. Unverified guest lookup shields customer PII
+  const unverifiedRes = await fetch(`${baseUrl}/api/orders/${createdOrderNumber}`);
+  const unverifiedJson = await unverifiedRes.json();
+  assert.strictEqual(unverifiedRes.status, 200);
+  assert.strictEqual(unverifiedJson.data.orderNumber, createdOrderNumber);
+  assert.strictEqual(unverifiedJson.data.isVerifiedCustomer, false);
+  assert.ok(unverifiedJson.data.customer.email.includes('***'), 'Unverified email must be masked');
+  assert.ok(unverifiedJson.data.items.length >= 1);
+
+  // 2. Verified lookup with matching email unmasks full customer details
+  const verifiedRes = await fetch(`${baseUrl}/api/orders/${createdOrderNumber}?email=guest@savoria.com`);
+  const verifiedJson = await verifiedRes.json();
+  assert.strictEqual(verifiedRes.status, 200);
+  assert.strictEqual(verifiedJson.data.orderNumber, createdOrderNumber);
+  assert.strictEqual(verifiedJson.data.isVerifiedCustomer, true);
+  assert.strictEqual(verifiedJson.data.customer.email, 'guest@savoria.com');
 });
 
 test('History: Customer queries order history by email', async () => {
