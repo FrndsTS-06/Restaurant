@@ -249,7 +249,7 @@ export const AdminOrdersPage = () => {
               </thead>
               <tbody className="divide-y divide-slate-800/60">
                 {paginatedOrders.map(order => (
-                  <tr key={order._id} className="hover:bg-slate-800/30 transition-colors">
+                  <tr key={order._id} id={`admin-order-row-${order._id}`} className="hover:bg-slate-800/30 transition-colors">
                     {/* Order # */}
                     <td className="py-3.5 px-4 font-mono font-bold text-amber-400">
                       <button
