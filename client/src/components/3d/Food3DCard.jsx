@@ -129,7 +129,7 @@ export const Food3DCard = ({
           <span className="badge badge-gold">⭐ {dish.rating || 4.9}</span>
         </div>
 
-        {/* Bottom Right Quick Image Zoom Button */}
+        {/* Bottom Right Quick Image & 3D Zoom Button */}
         <button
           type="button"
           id={`zoom-dish-btn-${dish._id}`}
@@ -137,8 +137,9 @@ export const Food3DCard = ({
             e.stopPropagation();
             onZoomImage ? onZoomImage(dish) : onSelectDish?.(dish);
           }}
-          aria-label={`Zoom high-resolution photograph of ${dish.name}`}
+          aria-label={`Zoom photograph and details for ${dish.name}`}
           title="Zoom Photograph (+)"
+          className="hover:scale-110 hover:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all"
           style={{
             position: 'absolute',
             bottom: '0.75rem',

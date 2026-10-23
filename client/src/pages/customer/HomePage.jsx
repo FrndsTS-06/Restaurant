@@ -26,11 +26,15 @@ import {
   Leaf,
   ShieldCheck,
   HeartHandshake,
-  Camera
+  Camera,
+  ZoomIn,
+  Box
 } from 'lucide-react';
+import { FoodZoomViewer } from '../../components/common/FoodZoomViewer';
 
 export const HomePage = () => {
   const [featuredDishes, setFeaturedDishes] = useState([]);
+  const [zoomedDish, setZoomedDish] = useState(null);
   const [loading, setLoading] = useState(true);
   const { addToCart } = useCart();
   const { data: healthData, isSuccess: healthOnline } = useGetHealthQuery(undefined, { pollingInterval: 15000 });
@@ -300,12 +304,34 @@ export const HomePage = () => {
                       decoding="async"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute top-4 right-4">
+                    {dish.modelStatus === 'available' && dish.model3dUrl && (
+                      <div className="absolute top-4 left-4 z-10">
+                        <span className="px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-amber-400/40 text-amber-300 text-xs font-bold flex items-center gap-1 shadow-md">
+                          <Box size={12} /> 3D View
+                        </span>
+                      </div>
+                    )}
+                    <div className="absolute top-4 right-4 z-10">
                       <span className="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-amber-400 text-xs font-bold flex items-center gap-1">
                         <Star size={12} className="fill-amber-400" />
                         {dish.rating || 4.9}
                       </span>
                     </div>
+
+                    {/* Quick Image & 3D Model Zoom Trigger */}
+                    <button
+                      type="button"
+                      id={`home-zoom-dish-btn-${dish._id}`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setZoomedDish(dish);
+                      }}
+                      aria-label={`Zoom photograph and 3D details for ${dish.name}`}
+                      title="Zoom Culinary Presentation (+)"
+                      className="absolute bottom-3 right-3 z-10 p-2 rounded-full bg-black/80 backdrop-blur-md border border-white/20 hover:border-amber-400 text-amber-300 hover:text-white shadow-xl hover:scale-110 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-400"
+                    >
+                      <ZoomIn size={15} />
+                    </button>
                   </div>
 
                   <div className="p-6 flex flex-col flex-1">
@@ -545,6 +571,13 @@ export const HomePage = () => {
           </div>
         </div>
       </section>
+
+      {/* Culinary Photography & 3D Model Zoom Viewer */}
+      <FoodZoomViewer
+        dish={zoomedDish}
+        isOpen={Boolean(zoomedDish)}
+        onClose={() => setZoomedDish(null)}
+      />
     </div>
   );
 };

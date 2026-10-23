@@ -9,7 +9,7 @@ import { useCart } from '../../hooks/useCart';
 import { Search, Utensils, Info, Check, Filter, AlertTriangle, Sparkles, X, ArrowUpDown, Box, ZoomIn } from 'lucide-react';
 import { Food3DCard } from '../../components/3d/Food3DCard';
 import { Food3DViewer } from '../../components/3d/Food3DViewer';
-import { ImageZoomModal } from '../../components/common/ImageZoomModal';
+import { FoodZoomViewer } from '../../components/common/FoodZoomViewer';
 
 const DIETARY_OPTIONS = ['All', 'Vegetarian', 'Vegan', 'Gluten-Free', 'Dairy-Free', 'Spicy', 'Nut-Free', 'Halal'];
 
@@ -532,10 +532,10 @@ export const MenuPage = () => {
           document.body
         )}
 
-        {/* High-Resolution Culinary Photography Zoom Lightbox */}
-        <ImageZoomModal
+        {/* High-Resolution Culinary Photography & 3D Model Zoom Viewer */}
+        <FoodZoomViewer
           dish={zoomedDish}
-          isOpen={!!zoomedDish}
+          isOpen={Boolean(zoomedDish)}
           onClose={() => setZoomedDish(null)}
         />
       </div>
