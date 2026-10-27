@@ -15,9 +15,9 @@ services:
       - key: PORT
         value: 10000
       - key: CLIENT_URL
-        sync: false
+        value: https://savoria-restaurant.vercel.app
       - key: ALLOWED_ORIGINS
-        sync: false
+        value: https://savoria-restaurant.vercel.app,http://localhost:5173
       - key: COOKIE_SAME_SITE
         value: none
       - key: MONGODB_URI
@@ -29,26 +29,26 @@ services:
       - key: JWT_REFRESH_SECRET
         generateValue: true
       - key: RAZORPAY_KEY_ID
-        sync: false
+        value: rzp_test_restaurantpro2026
       - key: RAZORPAY_KEY_SECRET
-        sync: false
+        value: restaurantpro_rzp_secret_key_sandbox
       - key: RAZORPAY_WEBHOOK_SECRET
-        sync: false
+        value: restaurantpro_rzp_webhook_secret_sandbox_2026
       - key: CLOUDINARY_CLOUD_NAME
-        sync: false
+        value: demo
       - key: CLOUDINARY_API_KEY
-        sync: false
+        value: placeholder_key
       - key: CLOUDINARY_API_SECRET
-        sync: false
+        value: placeholder_secret
       - key: EMAIL_DEV_MODE
-        value: "false"
+        value: "true"
       - key: SMTP_HOST
-        sync: false
+        value: smtp.sendgrid.net
       - key: SMTP_PORT
         value: "587"
       - key: SMTP_USER
-        sync: false
+        value: apikey
       - key: SMTP_PASS
-        sync: false
+        value: placeholder_pass
       - key: EMAIL_FROM
         value: "SAVORIA Haute Cuisine <concierge@savoria.com>"
