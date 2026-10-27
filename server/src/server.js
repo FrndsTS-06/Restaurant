@@ -6,9 +6,9 @@ const startServer = async () => {
   // Connect to MongoDB
   await connectDB();
 
-  const server = app.listen(PORT, () => {
-    console.log(`🚀 Savoria Server running on http://localhost:${PORT}`);
-    console.log(`📡 API Health Check available at http://localhost:${PORT}/api/health`);
+  const server = app.listen(PORT, '0.0.0.0', () => {
+    console.log(`🚀 Savoria Server running on port ${PORT}`);
+    console.log(`📡 API Health Check available at /api/health`);
   });
 
   // Graceful shutdown handling
