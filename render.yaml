@@ -62,7 +62,6 @@ services:
   - type: web
     name: restaurantpro-client
     runtime: static
-    region: oregon
     rootDir: client
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist
