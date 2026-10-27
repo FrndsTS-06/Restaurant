@@ -1,4 +1,7 @@
 services:
+  # ==============================================================================
+  # 1. BACKEND API (Node.js / Express Web Service)
+  # ==============================================================================
   - type: web
     name: restaurantpro-api
     env: node
@@ -15,9 +18,9 @@ services:
       - key: PORT
         value: 10000
       - key: CLIENT_URL
-        value: https://savoria-restaurant.vercel.app
+        value: https://restaurantpro-client.onrender.com
       - key: ALLOWED_ORIGINS
-        value: https://savoria-restaurant.vercel.app,http://localhost:5173
+        value: https://restaurantpro-client.onrender.com,http://localhost:5173
       - key: COOKIE_SAME_SITE
         value: none
       - key: MONGODB_URI
@@ -52,3 +55,29 @@ services:
         value: placeholder_pass
       - key: EMAIL_FROM
         value: "SAVORIA Haute Cuisine <concierge@savoria.com>"
+
+  # ==============================================================================
+  # 2. FRONTEND SPA (React / Vite / Three.js 3D Static Site)
+  # ==============================================================================
+  - type: web
+    name: restaurantpro-client
+    runtime: static
+    region: oregon
+    rootDir: client
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    pullRequestPreviewsEnabled: false
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+    envVars:
+      - key: VITE_API_URL
+        value: https://restaurantpro-api.onrender.com/api
